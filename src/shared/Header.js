@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [isFixed, setIsFixed] = useState(false);
+
+  const handleOnscroll = () => {
+    setIsFixed(window.scrollY >= 80);
+  };
+
+  useEffect(() => {
+    window.onscroll = handleOnscroll;
+  }, []);
+
   return (
-    <header id="site-header" className="fixed-top">
+    <header
+      id="site-header"
+      className={`fixed-top ${isFixed ? "nav-fixed" : ""}`}
+    >
       <div className="container">
         <nav className="navbar navbar-expand-lg stroke px-0">
           <h1>
@@ -120,20 +133,6 @@ const Header = () => {
                 </form>
               </div>
             </div>
-          </div>
-
-          <div className="mobile-position">
-            <nav className="navigation">
-              <div className="theme-switch-wrapper">
-                <label className="theme-switch" for="checkbox">
-                  <input type="checkbox" id="checkbox" />
-                  <div className="mode-container">
-                    <i className="gg-sun"></i>
-                    <i className="gg-moon"></i>
-                  </div>
-                </label>
-              </div>
-            </nav>
           </div>
         </nav>
       </div>

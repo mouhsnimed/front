@@ -7,6 +7,9 @@ import l1 from "../assets/images/l1.jpg";
 import l2 from "../assets/images/l2.jpg";
 import l3 from "../assets/images/l3.jpg";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+
 const Details = () => {
   return (
     <div>
@@ -80,47 +83,25 @@ const Details = () => {
           </div>
           <div class="row">
             <div class="col-lg-8 w3l-news">
-              <div class="card">
-                <img
-                  style={{ with: "100%" }}
-                  src={p1}
-                  class="img-fluid radius-image"
-                  alt="image"
-                />
-              </div>
-              <div class="blog-single-post">
-                <div class="single-post-image mb-5">
-                  <div class="owl-blog owl-carousel owl-theme">
-                    <div class="item">
-                      <div class="card">
-                        <img
-                          src={p1}
-                          class="img-fluid radius-image"
-                          alt="image"
-                        />
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="card">
-                        <img
-                          src={p2}
-                          class="img-fluid radius-image"
-                          alt="image"
-                        />
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="card">
-                        <img
-                          src={p3}
-                          class="img-fluid radius-image"
-                          alt="image"
-                        />
-                      </div>
-                    </div>
+              <Carousel>
+                <div class="item">
+                  <div class="card">
+                    <img src={p1} class="img-fluid radius-image" alt="image" />
                   </div>
                 </div>
+                <div class="item">
+                  <div class="card">
+                    <img src={p2} class="img-fluid radius-image" alt="image" />
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="card">
+                    <img src={p3} class="img-fluid radius-image" alt="image" />
+                  </div>
+                </div>
+              </Carousel>
 
+              <div class="blog-single-post">
                 <div class="single-post-content">
                   <h3 class="post-content-title mb-3">Description</h3>
                   <p class="mb-4">
