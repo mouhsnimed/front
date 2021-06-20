@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container">
         <nav className="navbar navbar-expand-lg stroke px-0">
           <h1>
-            <Link className="navbar-brand" to="index.html">
+            <Link className="navbar-brand" to="/">
               <span className="fa fa-home"></span> Estate sale
             </Link>
           </h1>
@@ -31,7 +31,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-lg-5 mr-auto">
               <li className="nav-item active">
-                <Link className="nav-link" to="index.html">
+                <Link className="nav-link" to="/">
                   Home <span className="sr-only">(current)</span>
                 </Link>
               </li>

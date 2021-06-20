@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./home";
 import About from "./about";
+import Contact from "./contact";
 import Details from "./details";
 import Listing from "./listing";
 import Header from "./shared/Header";
@@ -20,11 +21,14 @@ export default function App() {
           <Route path="/listing" exact>
             <Listing />
           </Route>
-          <Route path="/about" exact>
+          <Route path="/about-us" exact>
             <About />
           </Route>
           <Route path="/details" exact>
             <Details />
+          </Route>
+          <Route path="/contact" exact>
+            <Contact />
           </Route>
         </Switch>
         <Footer />
