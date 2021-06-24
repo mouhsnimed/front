@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./home";
 import About from "./about";
+import Register from "./register";
 import Contact from "./contact";
 import Details from "./details";
 import Listing from "./listing";
@@ -29,6 +30,9 @@ export default function App() {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/register" exact>
+            <Register />
           </Route>
         </Switch>
         <Footer />

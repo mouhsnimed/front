@@ -118,8 +118,9 @@ const Header = () => {
               </li> */}
             </ul>
             <div className="top-quote mt-lg-0">
-              <Link to="#buytheme" className="btn btn-style btn-primary">
-                <span className="fa fa-home"></span> Add listiing
+              <Link to="/register" className="btn btn-style btn-primary">
+                {/* <span className="fa fa-home"></span> Add listiing */}
+                Register
               </Link>
             </div>
 

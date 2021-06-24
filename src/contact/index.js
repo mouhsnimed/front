@@ -1,5 +1,4 @@
 import React from "react";
-import about from "../assets/images/about.jpg";
 
 function Contact() {
   return (

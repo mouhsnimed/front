@@ -16564,7 +16564,7 @@ ul.estate-info li span.fa {
   line-height: 28px;
 }
 
-.agent-form .input-field input,
+/* .agent-form .input-field input,
 .agent-form .input-field textarea {
   background: var(--bg-grey);
   border: none;
@@ -16584,7 +16584,7 @@ ul.estate-info li span.fa {
 .agent-form .input-field textarea:focus {
   background: var(--bg-color);
   border: 1px solid var(--primary-color);
-}
+} */
 
 .agent-map iframe {
   width: 100%;
@@ -17446,6 +17446,7 @@ h3.post-content-title {
 }
 
 .w3l-contact-7 .map-content-9 form .input-field input,
+.w3l-contact-7 .map-content-9 form .input-field select,
 .w3l-contact-7 .map-content-9 form .input-field textarea {
   background: var(--bg-color);
   border: none;
@@ -17585,4 +17586,10 @@ h3.post-content-title {
     font-size: 28px;
     line-height: 28px;
   }
+}
+
+.input-error {
+  color: red;
+  font-size: 14px;
+  margin-left: 10px;
 }
