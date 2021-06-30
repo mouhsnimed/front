@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomLoader from "../shared/Loader";
 import Input from "../shared/Input";
 import Select from "../shared/Select";
 import { useForm } from "react-hook-form";
+import API from "../request/api";
 
 function Register() {
   const {
@@ -10,11 +12,20 @@ function Register() {
     formState: { errors },
   } = useForm();
 
+  const [loader, setLoader] = useState(false);
   const onSubmit = (fields) => {
-    console.log(fields);
+    setLoader(true);
+    API({
+      method: "post",
+      url: "/person",
+      data: fields,
+    })
+      .then(() => setLoader(false))
+      .catch(() => setLoader(false));
   };
   return (
     <div>
+      {loader && <CustomLoader />}
       <section class="w3l-about-breadcrumb">
         <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
           <div class="container pt-lg-5 py-3"></div>
@@ -45,51 +56,57 @@ function Register() {
                       <div class="form-grid mb-3">
                         <div class="input-field">
                           <Input
-                            error={errors.firstName}
+                            error={errors.nom}
                             type="text"
-                            name="firstName"
-                            id="firstName"
-                            {...register("firstName", {
+                            name="nom"
+                            id="nom"
+                            {...register("nom", {
                               required: {
                                 value: true,
                                 message: "Champ obligatoir",
                               },
-                              maxLength: 30,
+                              // maxLength: 30,
                             })}
-                            placeholder="Prenom"
+                            placeholder="Votre nom"
                           />
                         </div>
                         <div class="input-field">
                           <Input
-                            error={errors.lastName}
+                            error={errors.prenoms}
                             type="text"
-                            name="lastName"
-                            id="lastName"
-                            {...register("lastName", {
+                            name="prenoms"
+                            id="prenoms"
+                            {...register("prenoms", {
                               required: {
                                 value: true,
                                 message: "Champ obligatoir",
                               },
-                              maxLength: 30,
+                              // maxLength: 30,
                             })}
-                            placeholder="Nom"
+                            placeholder="Votre prenom"
                           />
                         </div>
                       </div>
                       <div class="form-grid">
                         <div class="input-field">
                           <Input
-                            error={errors.phone}
+                            error={errors.numero}
                             type="number"
-                            name="phone"
-                            id="phone"
-                            {...register("phone", {
+                            name="numero"
+                            id="numero"
+                            {...register("numero", {
                               required: {
                                 value: true,
                                 message: "Champ obligatoir",
                               },
-                              minLength: 10,
-                              maxLength: 10,
+                              minLength: {
+                                value: 10,
+                                message: "minimum 10 chifres",
+                              },
+                              maxLength: {
+                                value: 10,
+                                message: "maxsimum 10 chifres",
+                              },
                             })}
                             placeholder="numero de telephone"
                           />
@@ -141,8 +158,14 @@ function Register() {
                               value: true,
                               message: "Champ obligatoir",
                             },
-                            minLength: 6,
-                            maxLength: 12,
+                            minLength: {
+                              value: 6,
+                              message: "minimum 6 chifres",
+                            },
+                            maxLength: {
+                              value: 12,
+                              message: "maximum 12 chifres",
+                            },
                           })}
                         />
                       </div>
