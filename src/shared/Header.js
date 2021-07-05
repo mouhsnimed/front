@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "../context/authContext";
+import API from "../request/api";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
-
   const handleOnscroll = () => {
     setIsFixed(window.scrollY >= 80);
   };
@@ -12,6 +14,28 @@ const Header = () => {
     window.onscroll = handleOnscroll;
   }, []);
 
+  const [authState, dispatch] = useAuthState();
+
+  const handleLogOut = () => {
+    API({
+      method: "post",
+      url: "/logout",
+    })
+      .then((res) => {
+        const { code } = res;
+        console.log("code ", code);
+        // update context
+        dispatch({
+          type: "LOGOUT",
+        });
+        toast.success("Logout success");
+        // redirect to home page
+        // history.push("/login");
+      })
+      .catch((error) => {
+        toast.error("Somthing went wrong!");
+      });
+  };
   return (
     <header
       id="site-header"
@@ -68,72 +92,43 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
-              {/* <li className="nav-item dropdown @@property__active">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Property <span className="fa fa-angle-down"></span>
-                </Link>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link
-                    className="dropdown-item @@ps__active"
-                    to="property-single.html"
-                  >
-                    Single property
-                  </Link>
-                </div>
-              </li> */}
-              {/* <li className="nav-item dropdown @@pages__active">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Pages <span className="fa fa-angle-down"></span>
-                </Link>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link
-                    className="dropdown-item @@about__active"
-                    to="about.html"
-                  >
-                    About us
-                  </Link>
-                  <Link
-                    className="dropdown-item @@contact__active"
-                    to="contact.html"
-                  >
-                    Contact us
-                  </Link>
-                </div>
-              </li> */}
             </ul>
-            <div className="top-quote mt-lg-0">
-              <Link to="/register" className="btn btn-style btn-primary">
-                {/* <span className="fa fa-home"></span> Add listiing */}
-                Register
-              </Link>
-            </div>
-
-            <div className="search mx-3">
-              <input className="search_box" type="checkbox" id="search_box" />
-              <label className="fa fa-search" for="search_box"></label>
-              <div className="search_form">
-                <form action="error.html" method="GET">
-                  <input type="text" placeholder="Search" />
-                  <input type="submit" value="search" />
-                </form>
-              </div>
-            </div>
+            {authState.isLoggedIn ? (
+              <>
+                <div className="top-quote mr-3">
+                  <Link to="/my-annonces" className="btn btn-style btn-primary">
+                    <i className="fa fa-bullhorn"></i>
+                    Mes annonces
+                  </Link>
+                </div>
+                <div className="top-quote">
+                  <span
+                    onClick={handleLogOut}
+                    className="btn btn-style btn-outline-primary"
+                  >
+                    <i className="fa fa-sign-out"></i>
+                    Se déconnecter
+                  </span>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="top-quote mr-3">
+                  <Link to="/register" className="btn btn-style btn-primary">
+                    <i className="fa fa-plus"></i> S'inscrire
+                  </Link>
+                </div>
+                <div className="top-quote">
+                  <Link
+                    to="/login"
+                    className="btn btn-style btn-outline-primary"
+                  >
+                    <i className="fa fa-user-circle"></i>
+                    Connexion
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </nav>
       </div>

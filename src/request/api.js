@@ -1,14 +1,18 @@
 import axios from "axios";
+import { getToken } from "../context/authReducer";
 const API = axios.create({
   baseURL: "http://localhost:8000/api",
   timeout: 3000,
-  // headers: { "X-Custom-Header": "foobar" },
+  headers: { Accept: "application/json" },
 });
 
-// API.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+export function SetTokenToAxios(token) {
+  API.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+}
 
-export function SetToken(token) {
-  API.defaults.headers.common["Authorization"] = token;
+const token = getToken();
+if (token) {
+  SetTokenToAxios(token);
 }
 
 export default API;

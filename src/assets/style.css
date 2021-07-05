@@ -12897,6 +12897,9 @@ button,
 .clear {
   clear: both;
 }
+.btn .fa {
+  margin-right: 8px;
+}
 
 .img-responsive {
   max-width: 100%;

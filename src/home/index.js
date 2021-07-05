@@ -14,14 +14,14 @@ import p6 from "../assets/images/p6.jpg";
 function Home() {
   return (
     <div>
-      <section class="w3l-cover-3">
-        <div class="cover top-bottom">
-          <div class="container">
-            <div class="middle-section text-center">
-              <div class="section-width">
+      <section className="w3l-cover-3">
+        <div className="cover top-bottom">
+          <div className="container">
+            <div className="middle-section text-center">
+              <div className="section-width">
                 <p>It's great to be home!</p>
                 <h2>Find a property today</h2>
-                <div class="most-searches">
+                <div className="most-searches">
                   <h4>Most Searches</h4>
                   <ul>
                     <li>
@@ -35,15 +35,15 @@ function Home() {
                     </li>
                   </ul>
                 </div>
-                <form action="#" class="w3l-cover-3-gd" method="GET">
+                <form action="#" className="w3l-cover-3-gd" method="GET">
                   <input
                     type="search"
                     name="text"
                     placeholder="Enter keywords"
                     required
                   />
-                  <span class="input-group-btn">
-                    <select class="btn btn-default" name="ext" required>
+                  <span className="input-group-btn">
+                    <select className="btn btn-default" name="ext" required>
                       <option selected="">Office</option>
                       <option>Villa</option>
                       <option>Apartment</option>
@@ -54,8 +54,8 @@ function Home() {
                       <option>Town house</option>
                     </select>
                   </span>
-                  <span class="input-group-btn">
-                    <select class="btn btn-default" name="ext" required>
+                  <span className="input-group-btn">
+                    <select className="btn btn-default" name="ext" required>
                       <option selected="">Select Country</option>
                       <option>Australia</option>
                       <option>London</option>
@@ -66,12 +66,12 @@ function Home() {
                       <option>Srilanka</option>
                     </select>
                   </span>
-                  <button type="submit" class="btn-primary">
+                  <button type="submit" className="btn-primary">
                     Search
                   </button>
                 </form>
               </div>
-              <section id="bottom" class="demo">
+              <section id="bottom" className="demo">
                 <a href="#bottom">
                   <span></span>Scroll
                 </a>
@@ -80,109 +80,109 @@ function Home() {
           </div>
         </div>
       </section>
-      <section class="locations-1" id="locations">
-        <div class="locations py-5">
-          <div class="container py-lg-5 py-md-4 py-2">
-            <div class="heading text-center mx-auto">
-              <h3 class="title-big">Top Properties</h3>
+      <section className="locations-1" id="locations">
+        <div className="locations py-5">
+          <div className="container py-lg-5 py-md-4 py-2">
+            <div className="heading text-center mx-auto">
+              <h3 className="title-big">Top Properties</h3>
             </div>
-            <div class="row pt-md-5 pt-4">
-              <div class="col-lg-4 col-md-6">
+            <div className="row pt-md-5 pt-4">
+              <div className="col-lg-4 col-md-6">
                 <a href="property-single.html">
-                  <div class="box16">
-                    <div class="rentext-listing-category">
+                  <div className="box16">
+                    <div className="rentext-listing-category">
                       <span>Buy</span>
                       <span>Rent</span>
                     </div>
-                    <img class="img-fluid" src={p1} alt="" />
-                    <div class="box-content">
-                      <h3 class="title">$25,00,000</h3>
-                      <span class="post">
+                    <img className="img-fluid" src={p1} alt="" />
+                    <div className="box-content">
+                      <h3 className="title">$25,00,000</h3>
+                      <span className="post">
                         51 Merrick Way, Coral Gables, USA
                       </span>
                     </div>
                   </div>
                 </a>
               </div>
-              <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+              <div className="col-lg-4 col-md-6 mt-md-0 mt-4">
                 <a href="property-single.html">
-                  <div class="box16">
-                    <div class="rentext-listing-category">
+                  <div className="box16">
+                    <div className="rentext-listing-category">
                       <span>Buy</span>
                       <span>Rent</span>
                     </div>
-                    <img class="img-fluid" src={p2} alt="" />
-                    <div class="box-content">
-                      <h3 class="title">$37,00,000</h3>
-                      <span class="post">
+                    <img className="img-fluid" src={p2} alt="" />
+                    <div className="box-content">
+                      <h3 className="title">$37,00,000</h3>
+                      <span className="post">
                         51 Merrick Way, Coral Gables, USA
                       </span>
                     </div>
                   </div>
                 </a>
               </div>
-              <div class="col-lg-4 col-md-6 mt-lg-0 pt-lg-0 mt-4 pt-md-2">
+              <div className="col-lg-4 col-md-6 mt-lg-0 pt-lg-0 mt-4 pt-md-2">
                 <a href="property-single.html">
-                  <div class="box16">
-                    <div class="rentext-listing-category">
+                  <div className="box16">
+                    <div className="rentext-listing-category">
                       <span>Buy</span>
                       <span>Rent</span>
                     </div>
-                    <img class="img-fluid" src={p3} alt="" />
-                    <div class="box-content">
-                      <h3 class="title">$41,00,000</h3>
-                      <span class="post">
+                    <img className="img-fluid" src={p3} alt="" />
+                    <div className="box-content">
+                      <h3 className="title">$41,00,000</h3>
+                      <span className="post">
                         51 Merrick Way, Coral Gables, USA
                       </span>
                     </div>
                   </div>
                 </a>
               </div>
-              <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
+              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
                 <a href="property-single.html">
-                  <div class="box16">
-                    <div class="rentext-listing-category">
+                  <div className="box16">
+                    <div className="rentext-listing-category">
                       <span>Buy</span>
                       <span>Rent</span>
                     </div>
-                    <img class="img-fluid" src={p4} alt="" />
-                    <div class="box-content">
-                      <h3 class="title">$19,00,000</h3>
-                      <span class="post">
+                    <img className="img-fluid" src={p4} alt="" />
+                    <div className="box-content">
+                      <h3 className="title">$19,00,000</h3>
+                      <span className="post">
                         51 Merrick Way, Coral Gables, USA
                       </span>
                     </div>
                   </div>
                 </a>
               </div>
-              <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
+              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
                 <a href="property-single.html">
-                  <div class="box16">
-                    <div class="rentext-listing-category">
+                  <div className="box16">
+                    <div className="rentext-listing-category">
                       <span>Buy</span>
                       <span>Rent</span>
                     </div>
-                    <img class="img-fluid" src={p5} alt="" />
-                    <div class="box-content">
-                      <h3 class="title">$26,00,000</h3>
-                      <span class="post">
+                    <img className="img-fluid" src={p5} alt="" />
+                    <div className="box-content">
+                      <h3 className="title">$26,00,000</h3>
+                      <span className="post">
                         51 Merrick Way, Coral Gables, USA
                       </span>
                     </div>
                   </div>
                 </a>
               </div>
-              <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
+              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
                 <a href="property-single.html">
-                  <div class="box16">
-                    <div class="rentext-listing-category">
+                  <div className="box16">
+                    <div className="rentext-listing-category">
                       <span>Buy</span>
                       <span>Rent</span>
                     </div>
-                    <img class="img-fluid" src={p6} alt="" />
-                    <div class="box-content">
-                      <h3 class="title">$34,00,000</h3>
-                      <span class="post">
+                    <img className="img-fluid" src={p6} alt="" />
+                    <div className="box-content">
+                      <h3 className="title">$34,00,000</h3>
+                      <span className="post">
                         51 Merrick Way, Coral Gables, USA
                       </span>
                     </div>
@@ -193,7 +193,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section class="w3l-index3" id="about">
+      <section className="w3l-index3" id="about">
         <WhoWeAre />
         <PopularLocation />
         <OurValues />
