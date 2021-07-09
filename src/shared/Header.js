@@ -95,10 +95,16 @@ const Header = () => {
             </ul>
             {authState.isLoggedIn ? (
               <>
-                <div className="top-quote mr-3">
+                {/* <div className="top-quote mr-3">
                   <Link to="/my-annonces" className="btn btn-style btn-primary">
                     <i className="fa fa-bullhorn"></i>
                     Mes annonces
+                  </Link>
+                </div> */}
+                <div className="top-quote mr-3">
+                  <Link to="/add-annonce" className="btn btn-style btn-primary">
+                    <i className="fa fa-bullhorn"></i>
+                    Publier une annonce
                   </Link>
                 </div>
                 <div className="top-quote">

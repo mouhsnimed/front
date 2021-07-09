@@ -10,6 +10,7 @@ import Login from "./login";
 import Contact from "./contact";
 import Details from "./details";
 import Listing from "./listing";
+import AddAnnonce from "./AddAnnonce";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import { Toaster } from "react-hot-toast";
@@ -40,6 +41,9 @@ export default function App() {
               <Register />
             </Route>
             <Route path="/login" exact component={Login} />
+            <Route path="/add-annonce" exact>
+              <AddAnnonce />
+            </Route>
           </Switch>
           <Footer />
           <Toaster />
