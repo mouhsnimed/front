@@ -4,8 +4,11 @@ import Input from "../shared/Input";
 import Select from "../shared/Select";
 import { useForm } from "react-hook-form";
 import API from "../request/api";
+import { useHistory } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Register() {
+  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -20,8 +23,18 @@ function Register() {
       url: "/register",
       data: fields,
     })
-      .then(() => setLoader(false))
-      .catch(() => setLoader(false));
+      .then(() => {
+        history.push("/login");
+        setLoader(false);
+        toast.success("Inscription réussie", { duration: 5000 });
+      })
+      .catch(() => {
+        toast.error(
+          "Une erreur survenue lors de l'inscription. Merci de ressayer",
+          { duration: 5000 }
+        );
+        setLoader(false);
+      });
   };
   return (
     <div>

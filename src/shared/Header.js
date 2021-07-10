@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useAuthState } from "../context/authContext";
 import API from "../request/api";
 import toast from "react-hot-toast";
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
+  const history = useHistory();
   const [isFixed, setIsFixed] = useState(false);
   const handleOnscroll = () => {
     setIsFixed(window.scrollY >= 80);
@@ -30,7 +32,7 @@ const Header = () => {
         });
         toast.success("Logout success");
         // redirect to home page
-        // history.push("/login");
+        history.push("/login");
       })
       .catch((error) => {
         toast.error("Somthing went wrong!");

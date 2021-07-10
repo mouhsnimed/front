@@ -6,8 +6,11 @@ import Select from "../shared/Select";
 import { useForm } from "react-hook-form";
 import API from "../request/api";
 import toast from "react-hot-toast";
+import { useHistory } from "react-router-dom";
 
 function AddAnnonce() {
+  const history = useHistory();
+
   const {
     register,
     handleSubmit,
@@ -22,13 +25,12 @@ function AddAnnonce() {
       url: "/addAnnonce",
       data: fields,
     })
-      .then(() => {
+      .then(({ data }) => {
         toast.success("Annonce créée avec succès", { duration: 5000 });
-        setLoader(false);
+        history.push(`/upload-files/${data.id}`);
       })
       .catch(() => {
         setLoader(false);
-
         toast.error(
           "Une erreur survenue lors de la saisie de l'annonce. Merci de ressayer",
           { duration: 5000 }

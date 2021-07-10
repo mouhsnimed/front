@@ -1,3 +1,21 @@
 .login-form {
   justify-content: center !important;
 }
+
+.file-container {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.annonce-file {
+  margin: 0 7px 10px;
+}
+
+.annonce-file img {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  height: 100%;
+}

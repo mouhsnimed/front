@@ -11,6 +11,7 @@ import Contact from "./contact";
 import Details from "./details";
 import Listing from "./listing";
 import AddAnnonce from "./AddAnnonce";
+import UploadFiles from "./AddAnnonce/Uploadfiles";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import { Toaster } from "react-hot-toast";
@@ -43,6 +44,12 @@ export default function App() {
             <Route path="/login" exact component={Login} />
             <Route path="/add-annonce" exact>
               <AddAnnonce />
+            </Route>
+            <Route path="/add-annonce" exact>
+              <AddAnnonce />
+            </Route>
+            <Route path="/upload-files/:id" exact>
+              <UploadFiles />
             </Route>
           </Switch>
           <Footer />
