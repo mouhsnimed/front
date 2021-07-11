@@ -1,9 +1,9 @@
 import React from "react";
 
-const Input = ({ type = "text", name, error, placeholder, ...rest }) => {
+const TextArea = ({ type, name, error, placeholder, ...rest }) => {
   return (
     <>
-      <input
+      <textarea
         type={type}
         name={name}
         id={name}
@@ -17,4 +17,4 @@ const Input = ({ type = "text", name, error, placeholder, ...rest }) => {
   );
 };
 
-export default Input;
+export default TextArea;

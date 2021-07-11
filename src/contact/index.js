@@ -3,47 +3,53 @@ import React from "react";
 function Contact() {
   return (
     <div>
-      <section class="w3l-about-breadcrumb">
-        <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
-          <div class="container pt-lg-5 py-3"></div>
+      <section className="w3l-about-breadcrumb">
+        <div className="breadcrumb-bg breadcrumb-bg-about pt-5">
+          <div className="container pt-lg-5 py-3"></div>
         </div>
       </section>
-      <section class="w3l-breadcrumb">
-        <div class="container">
-          <ul class="breadcrumbs-custom-path">
+      <section className="w3l-breadcrumb">
+        <div className="container">
+          <ul className="breadcrumbs-custom-path">
             <li>
               <a href="index.html">Home</a>
             </li>
-            <li class="active">
-              <span class="fa fa-angle-right mx-2" aria-hidden="true"></span>{" "}
+            <li className="active">
+              <span
+                className="fa fa-angle-right mx-2"
+                aria-hidden="true"
+              ></span>{" "}
               Pages
             </li>
-            <li class="active">
-              <span class="fa fa-angle-right mx-2" aria-hidden="true"></span>{" "}
+            <li className="active">
+              <span
+                className="fa fa-angle-right mx-2"
+                aria-hidden="true"
+              ></span>{" "}
               Contact Us
             </li>
           </ul>
         </div>
       </section>
-      <section class="w3l-contact-7 pt-5" id="contact">
-        <div class="contacts-9 pt-lg-5 pt-md-4">
-          <div class="container">
-            <div class="top-map">
-              <div class="row map-content-9">
-                <div class="col-lg-8">
-                  <div class="contact-form">
-                    <h5 class="mb-2">Get in touch</h5>
-                    <p class="mb-4">
+      <section className="w3l-contact-7 pt-5" id="contact">
+        <div className="contacts-9 pt-lg-5 pt-md-4">
+          <div className="container">
+            <div className="top-map">
+              <div className="row map-content-9">
+                <div className="col-lg-8">
+                  <div className="contact-form">
+                    <h5 className="mb-2">Get in touch</h5>
+                    <p className="mb-4">
                       Your email address will not be published. Required fields
                       are marked *
                     </p>
                     <form
                       action="https://sendmail.w3layouts.com/submitForm"
                       method="post"
-                      class=""
+                      className=""
                     >
-                      <div class="form-grid">
-                        <div class="input-field">
+                      <div className="form-grid">
+                        <div className="input-field">
                           <input
                             type="text"
                             name="w3lName"
@@ -52,7 +58,7 @@ function Contact() {
                             required=""
                           />
                         </div>
-                        <div class="input-field">
+                        <div className="input-field">
                           <input
                             type="email"
                             name="w3lSender"
@@ -62,7 +68,7 @@ function Contact() {
                           />
                         </div>
                       </div>
-                      <div class="input-field mt-4">
+                      <div className="input-field mt-4">
                         <textarea
                           name="w3lMessage"
                           id="w3lMessage"
@@ -76,36 +82,37 @@ function Contact() {
                       </label>
                       <button
                         type="submit"
-                        class="btn btn-primary btn-style mt-3"
+                        className="btn btn-primary btn-style mt-3"
                       >
                         Submit
                       </button>
                     </form>
                   </div>
                 </div>
-                <div class="col-lg-4 cont-details">
+                <div className="col-lg-4 cont-details">
                   <address>
-                    <h5 class="">Our Office Address</h5>
+                    <h5 className="">Our Office Address</h5>
                     <p>
-                      <span class="fa fa-map-marker"></span>Estate sale office,
-                      32, My Street, Kingston, New York 12401.{" "}
+                      <span className="fa fa-map-marker"></span>Estate sale
+                      office, 32, My Street, Kingston, New York 12401.{" "}
                     </p>
 
-                    <h5 class="mt-4 pt-lg-3">Phone informatiom</h5>
+                    <h5 className="mt-4 pt-lg-3">Phone informatiom</h5>
                     <p>
-                      <span class="fa fa-mobile"></span>{" "}
+                      <span className="fa fa-mobile"></span>{" "}
                       <strong>Phone :</strong>
                       <a href="tel:+1(12) 366 411 4999"> (+1) 366 411 499</a>
                     </p>
 
                     <p>
-                      <span class="fa fa-phone"></span> <strong>Tel :</strong>
+                      <span className="fa fa-phone"></span>{" "}
+                      <strong>Tel :</strong>
                       <a href="tel:+1(12) 366 411 4999"> (+1) 366 411 499</a>
                     </p>
 
                     <p>
                       {" "}
-                      <span class="fa fa-envelope"></span>{" "}
+                      <span className="fa fa-envelope"></span>{" "}
                       <strong>Email :</strong>
                       <a href="mailto:mail@example.com"> mail@example.com</a>
                     </p>
@@ -114,7 +121,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div class="map mt-5">
+          <div className="map mt-5">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2895687731!2d-74.26055986835598!3d40.697668402590374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1562582305883!5m2!1sen!2sin"
               frameborder="0"
