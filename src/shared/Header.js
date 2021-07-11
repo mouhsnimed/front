@@ -36,6 +36,10 @@ const Header = () => {
       })
       .catch((error) => {
         toast.error("Somthing went wrong!");
+        history.push("/login");
+        dispatch({
+          type: "LOGOUT",
+        });
       });
   };
   return (

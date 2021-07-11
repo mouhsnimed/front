@@ -1,17 +1,9 @@
-import React, { useState } from "react";
-import CustomLoader from "../shared/Loader";
+import React from "react";
 import FilePicker from "./FilePicker";
 
-import { useHistory } from "react-router-dom";
-
 function Uploadfiles() {
-  const history = useHistory();
-
-  const [loader, setLoader] = useState(false);
-
   return (
     <div>
-      {loader && <CustomLoader />}
       <section className="w3l-about-breadcrumb">
         <div className="breadcrumb-bg breadcrumb-bg-about pt-5">
           <div className="container pt-lg-5 py-3"></div>

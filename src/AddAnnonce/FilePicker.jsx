@@ -3,40 +3,36 @@ import React, { useState } from "react";
 import API from "../request/api";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import CustomLoader from "../shared/Loader";
 
 export default function FilePicker() {
   const [loader, setLoader] = useState(false);
   const params = useParams();
-  const [openFileSelector, { filesContent, plainFiles, loading, errors }] =
-    useFilePicker({
-      readAs: "DataURL",
-      accept: "image/*",
-      multiple: true,
-      limitFilesConfig: { max: 8, min: 3 },
-      maxFileSize: 10,
-      imageSizeRestrictions: {
-        maxHeight: 2300, // in pixels
-        maxWidth: 2300,
-        minHeight: 200,
-        minWidth: 400,
-      },
-    });
+  const [
+    openFileSelector,
+    { filesContent, plainFiles, loading, errors, clear },
+  ] = useFilePicker({
+    readAs: "DataURL",
+    accept: "image/*",
+    multiple: true,
+    limitFilesConfig: { max: 8, min: 3 },
+    maxFileSize: 10,
+    imageSizeRestrictions: {
+      maxHeight: 2300, // in pixels
+      maxWidth: 2300,
+      minHeight: 200,
+      minWidth: 400,
+    },
+  });
 
-  const uploadHandler = (files) => {
+  const uploadHandler = () => {
     setLoader(true);
-
     let formData = new FormData();
 
-    // Update the formData object
-    // formData.append(
-    //   "file",
-    //   this.state.selectedFile,
-    //   this.state.selectedFile.name
-    // );
-    // send all selected files
     formData.append("annonce_id", params.id);
-    for (const file of files) {
-      formData.append("images", file);
+
+    for (let index = 0; index < plainFiles.length; index++) {
+      formData.append(`images_${index}`, plainFiles[index]);
     }
     // for (const file of filesContent) {
     //   formData.append("images", file.content);
@@ -58,6 +54,8 @@ export default function FilePicker() {
         toast.success("Les images ont été enregistrées avec succès", {
           duration: 5000,
         });
+        setLoader(false);
+        clear();
         // history.push(`/upload-files/${data.id}`);
       })
       .catch(() => {
@@ -118,18 +116,19 @@ export default function FilePicker() {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <CustomLoader />;
   }
 
-  console.log(params, filesContent, plainFiles);
+  // console.log(params, filesContent, plainFiles);
   return (
     <div>
-      <input
+      {loader && <CustomLoader />}
+      {/* <input
         type="file"
         accept="image/*"
         multiple={true}
         onChange={(e) => uploadHandler(e.target.files)}
-      />
+      /> */}
 
       <button onClick={() => openFileSelector()}>Select files </button>
       <div className="file-container">
