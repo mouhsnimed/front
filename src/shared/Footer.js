@@ -12,12 +12,12 @@ const Footer = () => {
                   <span className="fa fa-comments"></span>
                 </a>
                 <a href="#url" className="title-small">
-                  Free consultation
+                  Laisser un Message
                 </a>
-                <h4>Schedule a free consultation with our specialist.</h4>
+                <h4> Contacter nous, au besoin de conseils immobilier, nous sommes à votre écoute</h4>
                 <a href="#buytheme" className="btn btn-style btn-primary">
                   {" "}
-                  Schedule now
+                  Nous contacter
                   <span className="fa fa-long-arrow-right ml-2"></span>{" "}
                 </a>
               </div>
@@ -26,34 +26,34 @@ const Footer = () => {
                   <span className="fa fa-phone"></span>
                 </a>
                 <a href="#url" className="title-small">
-                  help desk
+                  Nous Appeler
                 </a>
-                <h4>Do you have questions or want more infomation? Call Now</h4>
+                <h4>Avez vous des questions, à nous formuler ?</h4>
                 <a href="tel:+1-2345-678-11">
                   <p className="contact-phone mt-2">
                     <span className="lnr lnr-phone-handset"></span>{" "}
-                    +1-2345-678-11
+                    +212-2345-678-11
                   </p>
                 </a>
               </div>
               <div className="column mt-lg-0 mt-md-5">
-                <h4 className="mb-1">Signup for newsletter</h4>
-                <p>and get latest news and updates</p>
+                <h4 className="mb-1">s'inscrire au newsletter</h4>
+                <p> pour rester informé, de nos activités  </p>
                 <form action="#" className="subscribe-form mt-4" method="post">
                   <div className="form-group">
                     <input
                       type="email"
                       name="subscribe"
-                      placeholder="Enter your email"
+                      placeholder="Adresse email"
                       required=""
                     />
                     <button className="btn btn-style btn-primary">
-                      Subscribe
+                      s'inscrire
                     </button>
                   </div>
                 </form>
                 <ul className="footers-17_social">
-                  <h4 className="d-inline mr-4">Follow us</h4>
+                  <h4 className="d-inline mr-4">nous suivre</h4>
                   <li>
                     <a href="#url" className="twitter">
                       <span className="fa fa-twitter"></span>
@@ -80,7 +80,7 @@ const Footer = () => {
             <div className="d-grid grid-col-3 grids-content1 bottom-border">
               <div className="columns copyright-grid align-self">
                 <p className="copy-footer-29">
-                  © 2021 PFE. All rights reserved
+                  Copyright © ArtPart 2021 . Tous droit réservé
                 </p>
               </div>
             </div>

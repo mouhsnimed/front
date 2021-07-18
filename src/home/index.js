@@ -1,3 +1,5 @@
+import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 import React from "react";
 import Companies from "../shared/Companies";
 import TipsandAdvices from "../shared/TipsandAdvices";
@@ -12,6 +14,42 @@ import p5 from "../assets/images/p5.jpg";
 import p6 from "../assets/images/p6.jpg";
 
 function Home() {
+
+  // get list of catégorie
+  const [categories,setCategories] = useState([]);   
+  const [annonces,setAnnonces] = useState([]);   
+
+  useEffect(() => {
+
+    // Récupération des catégorie
+    const getCategories = async () => {
+      const tasksFromServer = await fetchAysnc("http://localhost:8000/api/categorieAnnonce")
+      setCategories(Array.from(tasksFromServer.data))
+    }
+    getCategories()
+
+    // Récupération du top 10 annonces  
+    const getAnnonces = async () => {
+      const tasksFromServer = await fetchAysnc("http://localhost:8000/api/Annonce")
+      setAnnonces(Array.from(tasksFromServer.data))
+      console.log(annonces)
+    }
+    getAnnonces()   
+
+  },[])
+
+  const fetchAysnc = async (api) => {
+      const res = await fetch(api,{
+        method:"GET"
+      })
+      const data = await res.json()
+      return data
+  }
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
   return (
     <div>
       <section className="w3l-cover-3">
@@ -19,10 +57,10 @@ function Home() {
           <div className="container">
             <div className="middle-section text-center">
               <div className="section-width">
-                <p>It's great to be home!</p>
-                <h2>Find a property today</h2>
+                <p> C'est tellement mieux de se sentir chez sois.</p>
+                <h2>Trouvez le lieu qui vous correspond</h2>
                 <div className="most-searches">
-                  <h4>Most Searches</h4>
+                  <h4>Les plus populaires</h4>
                   <ul>
                     <li>
                       <a href="#link">Villa</a>
@@ -30,50 +68,55 @@ function Home() {
                     <li>
                       <a href="#link">Apartment</a>
                     </li>
-                    <li>
-                      <a href="#link">Private house</a>
-                    </li>
                   </ul>
                 </div>
                 <form action="#" className="w3l-cover-3-gd" method="GET">
-                  <input
-                    type="search"
-                    name="text"
-                    placeholder="Enter keywords"
-                    required
-                  />
+                  <span className="input-group-btn">
+                    <select className="btn btn-default" name="ext" required >
+                        <option> Vente</option>                      
+                        <option> Location</option>                      
+                    </select>
+                  </span>
+
                   <span className="input-group-btn">
                     <select className="btn btn-default" name="ext" required>
-                      <option selected="">Office</option>
-                      <option>Villa</option>
-                      <option>Apartment</option>
-                      <option>Private house</option>
-                      <option>Building</option>
-                      <option>Shop</option>
-                      <option>Social housing</option>
-                      <option>Town house</option>
+                      <option>Choisir catégorie</option>                      
+                      {categories.map((categorie) => ( <option key={categorie.id}> {categorie.nom}</option>))} 
                     </select>
                   </span>
                   <span className="input-group-btn">
-                    <select className="btn btn-default" name="ext" required>
-                      <option selected="">Select Country</option>
-                      <option>Australia</option>
-                      <option>London</option>
-                      <option>India</option>
-                      <option>Bangladesh</option>
-                      <option>Saudi Arabia</option>
-                      <option>America</option>
-                      <option>Srilanka</option>
+                    <select className="btn btn-default" name="ext" required >
+                        <option>Choisir une ville</option>                      
+                        <option>Casablanca</option>
+                        <option>Fés</option>
+                        <option>Tanger</option>
+                        <option>Marrakech</option>
+                        <option>Salé</option>
+                        <option>Meknès</option>
+                        <option>Rabat</option>
+                        <option>Oujda</option>
+                        {/* <option>Kénitra</option>
+                        <option>Agadir</option>
+                        <option>Tétouan</option>
+                        <option>Témara</option>
+                        <option>Mohammédia</option>
+                        <option>Khouribga</option>
+                        <option>Rabat</option>
+                        <option>El Jadida</option>
+                        <option>Béni Mellal</option>
+                        <option>Taza</option>
+                        <option>Khémisset</option> */}
                     </select>
                   </span>
                   <button type="submit" className="btn-primary">
-                    Search
+                    <span className="fa fa-search" style={{color:"white",fontSize:"20px"}}></span>
+                    
                   </button>
                 </form>
               </div>
               <section id="bottom" className="demo">
                 <a href="#bottom">
-                  <span></span>Scroll
+                  <span></span> explorer
                 </a>
               </section>
             </div>
@@ -84,112 +127,32 @@ function Home() {
         <div className="locations py-5">
           <div className="container py-lg-5 py-md-4 py-2">
             <div className="heading text-center mx-auto">
-              <h3 className="title-big">Top Properties</h3>
+              <h3 className="title-big"> Pouvant vous intéressez</h3>
             </div>
+
             <div className="row pt-md-5 pt-4">
-              <div className="col-lg-4 col-md-6">
-                <a href="property-single.html">
-                  <div className="box16">
-                    <div className="rentext-listing-category">
-                      <span>Buy</span>
-                      <span>Rent</span>
+              {annonces.map((annonce,i) => 
+              (
+                (i < 6) &&
+                <div key={annonce.id} className="col-lg-4 col-md-6 mb-3">
+                  <a href="property-single.html">
+                    <div className="box16">
+                      <div className="rentext-listing-category">
+                        <span>{annonce.type_annonce}</span>
+                      </div>
+                      <img className="img-fluid" src={p1} alt="" />
+                      <div className="box-content">
+                        <h3 className="title">{numberWithCommas(annonce.prix)} MAD</h3>
+                        <span className="post">
+                            {annonce.titre}
+                        </span>
+                      </div>
                     </div>
-                    <img className="img-fluid" src={p1} alt="" />
-                    <div className="box-content">
-                      <h3 className="title">$25,00,000</h3>
-                      <span className="post">
-                        51 Merrick Way, Coral Gables, USA
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-md-0 mt-4">
-                <a href="property-single.html">
-                  <div className="box16">
-                    <div className="rentext-listing-category">
-                      <span>Buy</span>
-                      <span>Rent</span>
-                    </div>
-                    <img className="img-fluid" src={p2} alt="" />
-                    <div className="box-content">
-                      <h3 className="title">$37,00,000</h3>
-                      <span className="post">
-                        51 Merrick Way, Coral Gables, USA
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-lg-0 pt-lg-0 mt-4 pt-md-2">
-                <a href="property-single.html">
-                  <div className="box16">
-                    <div className="rentext-listing-category">
-                      <span>Buy</span>
-                      <span>Rent</span>
-                    </div>
-                    <img className="img-fluid" src={p3} alt="" />
-                    <div className="box-content">
-                      <h3 className="title">$41,00,000</h3>
-                      <span className="post">
-                        51 Merrick Way, Coral Gables, USA
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
-                <a href="property-single.html">
-                  <div className="box16">
-                    <div className="rentext-listing-category">
-                      <span>Buy</span>
-                      <span>Rent</span>
-                    </div>
-                    <img className="img-fluid" src={p4} alt="" />
-                    <div className="box-content">
-                      <h3 className="title">$19,00,000</h3>
-                      <span className="post">
-                        51 Merrick Way, Coral Gables, USA
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
-                <a href="property-single.html">
-                  <div className="box16">
-                    <div className="rentext-listing-category">
-                      <span>Buy</span>
-                      <span>Rent</span>
-                    </div>
-                    <img className="img-fluid" src={p5} alt="" />
-                    <div className="box-content">
-                      <h3 className="title">$26,00,000</h3>
-                      <span className="post">
-                        51 Merrick Way, Coral Gables, USA
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-4 pt-md-2">
-                <a href="property-single.html">
-                  <div className="box16">
-                    <div className="rentext-listing-category">
-                      <span>Buy</span>
-                      <span>Rent</span>
-                    </div>
-                    <img className="img-fluid" src={p6} alt="" />
-                    <div className="box-content">
-                      <h3 className="title">$34,00,000</h3>
-                      <span className="post">
-                        51 Merrick Way, Coral Gables, USA
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                  </a>
+                </div>
+              ))} 
             </div>
+            
           </div>
         </div>
       </section>
