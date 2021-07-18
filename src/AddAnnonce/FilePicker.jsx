@@ -34,9 +34,6 @@ export default function FilePicker() {
     for (let index = 0; index < plainFiles.length; index++) {
       formData.append(`images_${index}`, plainFiles[index]);
     }
-    // for (const file of filesContent) {
-    //   formData.append("images", file.content);
-    // }
 
     API(
       {
@@ -119,17 +116,9 @@ export default function FilePicker() {
     return <CustomLoader />;
   }
 
-  // console.log(params, filesContent, plainFiles);
   return (
     <div>
       {loader && <CustomLoader />}
-      {/* <input
-        type="file"
-        accept="image/*"
-        multiple={true}
-        onChange={(e) => uploadHandler(e.target.files)}
-      /> */}
-
       <button onClick={() => openFileSelector()}>Select files </button>
       <div className="file-container">
         {filesContent.map((file, index) => (

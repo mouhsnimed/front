@@ -12,6 +12,7 @@ import Details from "./details";
 import Listing from "./listing";
 import AddAnnonce from "./AddAnnonce";
 import UploadFiles from "./AddAnnonce/Uploadfiles";
+import AnnonceSuccess from "./AddAnnonce/Success";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import { Toaster } from "react-hot-toast";
@@ -50,6 +51,9 @@ export default function App() {
             </Route>
             <Route path="/upload-files/:id" exact>
               <UploadFiles />
+            </Route>
+            <Route path="/annonce-success" exact>
+              <AnnonceSuccess />
             </Route>
           </Switch>
           <Footer />
