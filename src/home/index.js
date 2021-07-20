@@ -1,5 +1,4 @@
-import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import React from "react";
 import Companies from "../shared/Companies";
 import TipsandAdvices from "../shared/TipsandAdvices";
@@ -7,44 +6,40 @@ import OurValues from "./OurValues";
 import WhoWeAre from "./WhoWeAre";
 import PopularLocation from "./PopularLocation";
 import p1 from "../assets/images/p1.jpg";
-import p2 from "../assets/images/p2.jpg";
-import p3 from "../assets/images/p3.jpg";
-import p4 from "../assets/images/p4.jpg";
-import p5 from "../assets/images/p5.jpg";
-import p6 from "../assets/images/p6.jpg";
 
 function Home() {
-
   // get list of catégorie
-  const [categories,setCategories] = useState([]);   
-  const [annonces,setAnnonces] = useState([]);   
+  const [categories, setCategories] = useState([]);
+  const [annonces, setAnnonces] = useState([]);
 
   useEffect(() => {
-
     // Récupération des catégorie
     const getCategories = async () => {
-      const tasksFromServer = await fetchAysnc("http://localhost:8000/api/categorieAnnonce")
-      setCategories(Array.from(tasksFromServer.data))
-    }
-    getCategories()
+      const tasksFromServer = await fetchAysnc(
+        "http://localhost:8000/api/categorieAnnonce"
+      );
+      setCategories(Array.from(tasksFromServer.data));
+    };
+    getCategories();
 
-    // Récupération du top 10 annonces  
+    // Récupération du top 10 annonces
     const getAnnonces = async () => {
-      const tasksFromServer = await fetchAysnc("http://localhost:8000/api/Annonce")
-      setAnnonces(Array.from(tasksFromServer.data))
-      console.log(annonces)
-    }
-    getAnnonces()   
-
-  },[])
+      const tasksFromServer = await fetchAysnc(
+        "http://localhost:8000/api/Annonce"
+      );
+      setAnnonces(Array.from(tasksFromServer.data));
+      console.log(annonces);
+    };
+    getAnnonces();
+  }, []);
 
   const fetchAysnc = async (api) => {
-      const res = await fetch(api,{
-        method:"GET"
-      })
-      const data = await res.json()
-      return data
-  }
+    const res = await fetch(api, {
+      method: "GET",
+    });
+    const data = await res.json();
+    return data;
+  };
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -72,30 +67,32 @@ function Home() {
                 </div>
                 <form action="#" className="w3l-cover-3-gd" method="GET">
                   <span className="input-group-btn">
-                    <select className="btn btn-default" name="ext" required >
-                        <option> Vente</option>                      
-                        <option> Location</option>                      
+                    <select className="btn btn-default" name="ext" required>
+                      <option> Vente</option>
+                      <option> Location</option>
                     </select>
                   </span>
 
                   <span className="input-group-btn">
                     <select className="btn btn-default" name="ext" required>
-                      <option>Choisir catégorie</option>                      
-                      {categories.map((categorie) => ( <option key={categorie.id}> {categorie.nom}</option>))} 
+                      <option>Choisir catégorie</option>
+                      {categories.map((categorie) => (
+                        <option key={categorie.id}> {categorie.nom}</option>
+                      ))}
                     </select>
                   </span>
                   <span className="input-group-btn">
-                    <select className="btn btn-default" name="ext" required >
-                        <option>Choisir une ville</option>                      
-                        <option>Casablanca</option>
-                        <option>Fés</option>
-                        <option>Tanger</option>
-                        <option>Marrakech</option>
-                        <option>Salé</option>
-                        <option>Meknès</option>
-                        <option>Rabat</option>
-                        <option>Oujda</option>
-                        {/* <option>Kénitra</option>
+                    <select className="btn btn-default" name="ext" required>
+                      <option>Choisir une ville</option>
+                      <option>Casablanca</option>
+                      <option>Fés</option>
+                      <option>Tanger</option>
+                      <option>Marrakech</option>
+                      <option>Salé</option>
+                      <option>Meknès</option>
+                      <option>Rabat</option>
+                      <option>Oujda</option>
+                      {/* <option>Kénitra</option>
                         <option>Agadir</option>
                         <option>Tétouan</option>
                         <option>Témara</option>
@@ -109,8 +106,10 @@ function Home() {
                     </select>
                   </span>
                   <button type="submit" className="btn-primary">
-                    <span className="fa fa-search" style={{color:"white",fontSize:"20px"}}></span>
-                    
+                    <span
+                      className="fa fa-search"
+                      style={{ color: "white", fontSize: "20px" }}
+                    ></span>
                   </button>
                 </form>
               </div>
@@ -131,28 +130,28 @@ function Home() {
             </div>
 
             <div className="row pt-md-5 pt-4">
-              {annonces.map((annonce,i) => 
-              (
-                (i < 6) &&
-                <div key={annonce.id} className="col-lg-4 col-md-6 mb-3">
-                  <a href="property-single.html">
-                    <div className="box16">
-                      <div className="rentext-listing-category">
-                        <span>{annonce.type_annonce}</span>
-                      </div>
-                      <img className="img-fluid" src={p1} alt="" />
-                      <div className="box-content">
-                        <h3 className="title">{numberWithCommas(annonce.prix)} MAD</h3>
-                        <span className="post">
-                            {annonce.titre}
-                        </span>
-                      </div>
+              {annonces.map(
+                (annonce, i) =>
+                  i < 6 && (
+                    <div key={annonce.id} className="col-lg-4 col-md-6 mb-3">
+                      <a href="property-single.html">
+                        <div className="box16">
+                          <div className="rentext-listing-category">
+                            <span>{annonce.type_annonce}</span>
+                          </div>
+                          <img className="img-fluid" src={p1} alt="" />
+                          <div className="box-content">
+                            <h3 className="title">
+                              {numberWithCommas(annonce.prix)} MAD
+                            </h3>
+                            <span className="post">{annonce.titre}</span>
+                          </div>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </div>
-              ))} 
+                  )
+              )}
             </div>
-            
           </div>
         </div>
       </section>

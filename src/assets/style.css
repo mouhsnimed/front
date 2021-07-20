@@ -13274,7 +13274,7 @@ input:checked + .mode-container i.gg-moon {
 .navbar-expand-lg .navbar-nav .nav-link.show,
 .navbar-expand-lg .navbar-nav .nav-link.active,
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-  color: #fff;
+  color: var(--primary-color);
   opacity: 1;
 }
 
@@ -16626,8 +16626,7 @@ ul.page-pagination li {
   display: inline-block;
 }
 
-ul.page-pagination li span.current
-{
+ul.page-pagination li span.current {
   display: block;
   padding: 10px 18px;
   color: #fff;
@@ -16642,8 +16641,7 @@ ul.page-pagination li span.current
 ul.page-pagination li a.page-numbers,
 ul.page-pagination li a.next,
 ul.page-pagination li button,
-ul.page-pagination li button.next
- {
+ul.page-pagination li button.next {
   display: block;
   padding: 10px 18px;
   background-color: var(--bg-color);
@@ -16658,8 +16656,7 @@ ul.page-pagination li button.next
 ul.page-pagination li a.page-numbers:hover,
 ul.page-pagination li a.next:hover,
 ul.page-pagination li button:hover,
-ul.page-pagination li button.next:hover
-{
+ul.page-pagination li button.next:hover {
   background-color: var(--bg-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
