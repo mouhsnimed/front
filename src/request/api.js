@@ -1,7 +1,8 @@
 import axios from "axios";
 import { getToken, removeToken } from "../context/authReducer";
+export const BACKEND_URL = "http://localhost:8000";
 const API = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: `${BACKEND_URL}/api`,
   timeout: 3000,
   headers: { Accept: "application/json" },
 });

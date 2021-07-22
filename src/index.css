@@ -30,3 +30,9 @@
   width: 80px;
   margin: 0 auto 30px;
 }
+
+.empty-annonce img {
+  display: block;
+  width: 200px;
+  margin: 0 auto 30px;
+}
