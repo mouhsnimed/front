@@ -79,12 +79,12 @@ const Header = () => {
             <ul className="navbar-nav ml-lg-5 mr-auto">
               <li className={`nav-item ${current == 0 && "active" }`}>
                 <Link className="nav-link" to="/" onClick={() => (setCurrent(0))}>
-                  Accueil 
+                  ACCUEIL 
                 </Link>
               </li>
               <li className={`nav-item ${current == 1 && "active" }`}>
                 <Link className="nav-link" to="/listing" onClick={() => (setCurrent(1))}>
-                  Annonces 
+                  ANNONCES 
                 </Link>
               </li>
               {/* <li className="nav-item @@listing__active">
@@ -94,12 +94,17 @@ const Header = () => {
               </li> */}
               <li className={`nav-item ${current == 2 && "active" }`}>
                 <Link className="nav-link" to="/about-us" onClick={() => (setCurrent(2))}>
-                 Nous ?
+                 NOUS 
                 </Link>
               </li>
               <li className={`nav-item ${current == 3 && "active" }`}>
-                <Link className="nav-link" to="/contact" onClick={() => (setCurrent(3))}>
-                  Contact
+                <Link className="nav-link" to="/visite" onClick={() => (setCurrent(3))}>
+                  360° VISITES
+                </Link>
+              </li>
+              <li className={`nav-item ${current == 4 && "active" }`}>
+                <Link className="nav-link" to="/contact" onClick={() => (setCurrent(4))}>
+                  CONTACTS
                 </Link>
               </li>
             </ul>
@@ -123,7 +128,7 @@ const Header = () => {
                     className="btn btn-style btn-outline-primary"
                   >
                     <i className="fa fa-sign-out"></i>
-                    Se déconnecter
+                    {/* Se déconnecter */}
                   </span>
                 </div>
               </>

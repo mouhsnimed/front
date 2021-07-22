@@ -4,6 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
 import Home from "./home";
+import Visite from "./visite";
 import About from "./about";
 import Register from "./register";
 import Login from "./login";
@@ -29,6 +30,9 @@ export default function App() {
             </Route>
             <Route path="/listing" exact>
               <Listing />
+            </Route>
+            <Route path="/visite" exact>
+              <Visite />
             </Route>
             <Route path="/about-us" exact>
               <About />

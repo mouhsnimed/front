@@ -80,7 +80,7 @@ function AddAnnonce() {
                             {...register("titre", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             placeholder="Titre d'annonce"
@@ -95,7 +95,7 @@ function AddAnnonce() {
                             {...register("prix", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             placeholder="Prix"
@@ -110,7 +110,7 @@ function AddAnnonce() {
                             {...register("categorie_annonce_id", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -129,7 +129,7 @@ function AddAnnonce() {
                             {...register("ville", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -150,7 +150,7 @@ function AddAnnonce() {
                             {...register("adresse", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             placeholder="L'adresse de bien"
@@ -164,7 +164,7 @@ function AddAnnonce() {
                             {...register("localisation_geo", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                               pattern: {
                                 value:
@@ -185,7 +185,7 @@ function AddAnnonce() {
                             {...register("superficie", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             placeholder="superficie (m2)"
@@ -198,7 +198,7 @@ function AddAnnonce() {
                             {...register("nombre_chambre", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -219,7 +219,7 @@ function AddAnnonce() {
                             {...register("nombre_bain", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -237,7 +237,7 @@ function AddAnnonce() {
                             {...register("nombre_salon", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -258,7 +258,7 @@ function AddAnnonce() {
                             {...register("etage", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -279,7 +279,7 @@ function AddAnnonce() {
                             {...register("etat_bien", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -298,7 +298,7 @@ function AddAnnonce() {
                             {...register("type_annonce", {
                               required: {
                                 value: true,
-                                message: "Champ obligatoir",
+                                message: "Champ obligatoire",
                               },
                             })}
                             options={[
@@ -315,7 +315,7 @@ function AddAnnonce() {
                             {...register("meuble", {
                               // required: {
                               //   value: true,
-                              //   message: "Champ obligatoir",
+                              //   message: "Champ obligatoire",
                               // },
                             })}
                             options={[
@@ -334,7 +334,7 @@ function AddAnnonce() {
                           {...register("description", {
                             required: {
                               value: true,
-                              message: "Champ obligatoir",
+                              message: "Champ obligatoire",
                             },
                           })}
                           placeholder="Description"
@@ -345,7 +345,7 @@ function AddAnnonce() {
                         type="submit"
                         className="btn btn-primary btn-style mt-3"
                       >
-                        Submit
+                        Publier
                       </button>
                     </form>
                   </div>
