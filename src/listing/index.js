@@ -345,6 +345,7 @@ const Listing = () => {
                   id="searchVille"
                   required
                 >
+                  <option value="agadir">Agadir</option>
                   <option>Casablanca</option>
                   <option>Fés</option>
                   <option>Tanger</option>

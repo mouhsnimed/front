@@ -303,8 +303,8 @@ function AddAnnonce() {
                             })}
                             options={[
                               { value: "", label: "Type de bien" },
-                              { value: "1", label: "Location" },
-                              { value: "2", label: "Vente" },
+                              { value: "location", label: "Location" },
+                              { value: "vente", label: "Vente" },
                             ]}
                           />
                         </div>
