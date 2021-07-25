@@ -39,7 +39,7 @@ export default function App() {
             <Route path="/about-us" exact>
               <About />
             </Route>
-            <Route path="/details" exact>
+            <Route path="/details/:id" exact>
               <Details />
             </Route>
             <Route path="/contact" exact>

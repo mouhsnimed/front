@@ -36,3 +36,15 @@
   width: 200px;
   margin: 0 auto 30px;
 }
+.carousel .slide {
+  max-height: 550px;
+}
+.carousel .slide .item {
+  height: 100%;
+}
+.carousel .slide .item .card {
+  height: 100%;
+}
+.carousel .slide .item .card img {
+  height: 100%;
+}
