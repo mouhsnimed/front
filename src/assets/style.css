@@ -14838,6 +14838,7 @@ a.title-small {
   font-size: 14px;
   border-radius: 3px;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .w3l-index3 ul.w3l-right-book-grid {
@@ -16393,6 +16394,7 @@ ul.details-list li strong {
   font-size: 14px;
   border-radius: 3px;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .post-content iframe {
@@ -16522,11 +16524,13 @@ ul.social li a span.fa-twitter {
   color: var(--primary-color);
 }
 
-a.cost-estate {
+a.cost-estate,
+span.cost-estate {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 5px;
   display: inline-block;
+  color : var(--primary);
 }
 
 ul.estate-info li {

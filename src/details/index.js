@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useState, useLayoutEffect } from "react";
 import p1 from "../assets/images/p1.jpg";
 import p2 from "../assets/images/p2.jpg";
 import p3 from "../assets/images/p3.jpg";
-import l5 from "../assets/images/l5.jpg";
-import l1 from "../assets/images/l1.jpg";
-import l2 from "../assets/images/l2.jpg";
-import l3 from "../assets/images/l3.jpg";
+import { useParams } from "react-router-dom";
+import CustomLoader from "../shared/Loader";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import API, { BACKEND_URL } from "../request/api";
+import toast from "react-hot-toast";
 
 const Details = () => {
+  const [loader, setLoader] = useState(false);
+  const [details, setDetails] = useState({});
+  const [user, setUser] = useState({});
+  const [medias, setMedias] = useState([]);
+  const { id } = useParams();
+  const getDetails = () => {
+    setLoader(true);
+    API({
+      method: "get",
+      url: `/Annonce/${id}`,
+    })
+      .then(({ data }) => {
+        setLoader(false);
+        setDetails(data.details);
+        setMedias(data.medias ?? []);
+        setUser(data.user);
+      })
+      .catch(() => {
+        setLoader(false);
+        toast.error("Aucun annonce n'a été trouvé", { duration: 5000 });
+      });
+  };
+  useLayoutEffect(() => {
+    if (id) {
+      getDetails();
+    }
+  }, [id]);
+  console.log(medias);
   return (
     <div>
+      {loader && <CustomLoader />}
       <section className="w3l-about-breadcrumb">
         <div className="breadcrumb-bg breadcrumb-bg-about pt-5">
           <div className="container pt-lg-5 py-3"></div>
@@ -28,15 +57,15 @@ const Details = () => {
               <span
                 className="fa fa-angle-right mx-2"
                 aria-hidden="true"
-              ></span>{" "}
-              Property
+              ></span>
+              Annonces
             </li>
             <li className="active">
               <span
                 className="fa fa-angle-right mx-2"
                 aria-hidden="true"
-              ></span>{" "}
-              property single
+              ></span>
+              Details d'annonce
             </li>
           </ul>
         </div>
@@ -48,135 +77,109 @@ const Details = () => {
             <ul className="blog-single-author-date align-items-center">
               <li>
                 <div className="listing-category">
-                  <span>Buy</span>
-                  <span>Rent</span>
+                  <span>{details.type_annonce}</span>
                 </div>
               </li>
               <li>
-                <span className="fa fa-clock-o"></span> 5 months ago
-              </li>
-              <li>
-                <span className="fa fa-eye"></span> 250 views
+                <span className="fa fa-clock-o"></span>{" "}
+                {Date(details.created_at).toLocaleString()}
               </li>
             </ul>
           </div>
           <div className="post-content">
-            <h2 className="title-single">
-              {" "}
-              A digital prescription for the pharma industry
-            </h2>
+            <h2 className="title-single"> {details.titre}</h2>
           </div>
           <div className="blo-singl mb-4">
             <ul className="blog-single-author-date align-items-center">
               <li>
-                <p>Unnamed road, San Francisco, CA 94102</p>
+                <p>
+                  {details.adresse}, {details.ville}, {details.pays}
+                </p>
               </li>
               <li>
-                <span className="fa fa-bed"></span> 3 Beds
+                <span className="fa fa-bed"></span> {details.nombre_chambre}{" "}
+                Chambres
               </li>
               <li>
-                <span className="fa fa-bath"></span> 4 Baths
+                <span className="fa fa-bath"></span> {details.nombre_bain} salle
+                de bains
               </li>
               <li>
-                <span className="fa fa-share-square-o"></span> 1258 sqrft
+                <span className="fa fa-share-square-o"></span>{" "}
+                {details.etat_bien}
               </li>
             </ul>
             <ul className="share-post">
-              <a href="#url" className="cost-estate m-o">
-                $25,0045
-              </a>
+              <span className="cost-estate m-o">
+                {details.prix?.toFixed(2)} MAD
+              </span>
             </ul>
           </div>
           <div className="row">
             <div className="col-lg-8 w3l-news">
               <Carousel>
-                <div className="item">
-                  <div className="card">
-                    <img
-                      src={p1}
-                      className="img-fluid radius-image"
-                      alt="image"
-                    />
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="card">
-                    <img
-                      src={p2}
-                      className="img-fluid radius-image"
-                      alt="image"
-                    />
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="card">
-                    <img
-                      src={p3}
-                      className="img-fluid radius-image"
-                      alt="image"
-                    />
-                  </div>
-                </div>
+                {medias.map((media) => {
+                  return (
+                    <div key={media.id} className="item">
+                      <div className="card">
+                        <img
+                          alt={media.titre}
+                          src={`${BACKEND_URL}/${media.chemin}`}
+                          className="img-fluid radius-image"
+                          alt="image"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
               </Carousel>
 
               <div className="blog-single-post">
                 <div className="single-post-content">
                   <h3 className="post-content-title mb-3">Description</h3>
-                  <p className="mb-4">
-                    Lorem model text, and a search for 'lorem ipsum' will
-                    uncover many web sites still in their infancy. Various
-                    versions have evolved over the years, sometimes by accident,
-                    sometimes on purpose injected humour and the like.{" "}
-                  </p>
-                  <p className="mb-4">
-                    When you decide to put your business online it is a little
-                    bet tricky step for novice computer users because they want
-                    to keep data safe & secure. This problem developed from
-                    companies which did not take security seriously. Lorem ipsum
-                    dolor sit amet elit.{" "}
-                  </p>
+                  <p className="mb-4">{details.description}</p>
                   <div className="single-bg-white">
-                    <h3 className="post-content-title mb-4">Property detail</h3>
+                    <h3 className="post-content-title mb-4">
+                      Détail de la propriété
+                    </h3>
                     <ul className="details-list">
                       <li>
-                        <strong>Property id :</strong> PRPT12345{" "}
+                        <strong>Référence :</strong> {details.id}
                       </li>
                       <li>
-                        <strong>Property size :</strong> 1200sqft{" "}
+                        <strong>Superficie :</strong> {details.superficie} m2
                       </li>
                       <li>
-                        <strong>Rooms :</strong> 2{" "}
+                        <strong>Chambres :</strong> {details.nombre_chambre}
                       </li>
                       <li>
-                        <strong>Bedrooms :</strong> 5{" "}
+                        <strong>Salon :</strong> {details.nombre_salon}
                       </li>
                       <li>
-                        <strong>Bathrooms :</strong> 2{" "}
+                        <strong>Salle de bains :</strong> {details.nombre_bain}{" "}
                       </li>
                       <li>
-                        <strong>Exterior material :</strong> Brick{" "}
+                        <strong>Meublé :</strong>{" "}
+                        {details.meuble === 1 ? "Oui" : "Non"}
                       </li>
-                      <li>
+                      {/* <li>
                         <strong>Structure type :</strong> Wood{" "}
                       </li>
                       <li>
                         <strong>Garage size :</strong> 15 cars{" "}
                       </li>
                       <li>
-                        <strong>Garages :</strong> 15{" "}
+                        <strong>Garages :</strong> 15{" "} 
+                      </li>*/}
+                      <li>
+                        <strong>Prix :</strong> {details.prix?.toFixed(2)} MAD
                       </li>
                       <li>
-                        <strong>Property Price :</strong> $ 750{" "}
-                      </li>
-                      <li>
-                        <strong>Built Year :</strong> 2018{" "}
-                      </li>
-                      <li>
-                        <strong>Avaiable from :</strong> Aug 2019{" "}
+                        <strong>Etat de bien :</strong> {details.etat_bien}
                       </li>
                     </ul>
                   </div>
-                  <div className="single-bg-white">
+                  {/* <div className="single-bg-white">
                     <h3 className="post-content-title mb-4">Amenities</h3>
                     <ul className="details-list">
                       <li>
@@ -201,21 +204,25 @@ const Details = () => {
                         <strong>Internet and wifi </strong>{" "}
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
-
-                <div className="single-bg-white">
-                  <h3 className="post-content-title mb-4">Location</h3>
-                  <div className="agent-map">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2895687731!2d-74.26055986835598!3d40.697668402590374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1562582305883!5m2!1sen!2sin"
-                      frameborder="0"
-                      allowfullscreen=""
-                    ></iframe>
+                {details.localisation_geo?.startsWith(
+                  "https://www.google.com/maps"
+                ) && (
+                  <div className="single-bg-white">
+                    <h3 className="post-content-title mb-4">Localisation</h3>
+                    <div className="agent-map">
+                      <iframe
+                        //src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2895687731!2d-74.26055986835598!3d40.697668402590374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1562582305883!5m2!1sen!2sin"
+                        src={details.localisation_geo}
+                        frameborder="0"
+                        allowfullscreen=""
+                      ></iframe>
+                    </div>
                   </div>
-                </div>
+                )}
 
-                <div className="single-bg-white mb-0">
+                {/* <div className="single-bg-white mb-0">
                   <h3 className="post-content-title mb-4">Video</h3>
                   <div className="post-content">
                     <iframe
@@ -224,35 +231,33 @@ const Details = () => {
                       allowfullscreen=""
                     ></iframe>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5">
               <aside className="sidebar">
                 <div className="sidebar-widget popular-posts">
                   <div className="sidebar-title">
-                    <h4>Contact an Agent</h4>
+                    <h4>Contacter le propretiere de l'annonce</h4>
                   </div>
 
                   <article className="post">
-                    <figure className="post-thumb">
-                      <img src={l5} className="radius-image" alt="" />
-                    </figure>
                     <div className="text mb-0">
-                      <a href="#blog-single">Company realty</a>
-                      <div className="post-info">+(12) 324 567 89</div>
-                      <div className="post-info">companyrealty@mail.com</div>
+                      <span>
+                        {user.nom} {user.prenom}
+                      </span>
+                      <div className="post-info">+212 {user.numero}</div>
+                      <a
+                        target="_blank"
+                        href={`mailto::${user.email}`}
+                        className="post-info"
+                      >
+                        {user.email}
+                      </a>
                     </div>
                   </article>
-                  <button
-                    type="submit"
-                    className="btn btn-primary btn-style w-100"
-                  >
-                    Request details
-                  </button>
                 </div>
-
-                <div className="sidebar-widget popular-posts">
+                {/* <div className="sidebar-widget popular-posts">
                   <div className="sidebar-title">
                     <h4>Popular Post</h4>
                   </div>
@@ -290,7 +295,7 @@ const Details = () => {
                       <div className="post-info">Sep 10, 2020 - 2 comments</div>
                     </div>
                   </article>
-                </div>
+                </div> */}
               </aside>
             </div>
           </div>

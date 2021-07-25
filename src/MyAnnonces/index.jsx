@@ -78,11 +78,7 @@ const MyAnnonces = () => {
                           <Link to="/details">
                             <div className="box16">
                               <div className="rentext-listing-category">
-                                <span>
-                                  {annonce.type_annonce === 1
-                                    ? "Location"
-                                    : "Vente"}
-                                </span>
+                                <span>{annonce.type_annonce}</span>
                               </div>
                               <img
                                 className="img-fluid"

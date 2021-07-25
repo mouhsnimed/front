@@ -6,6 +6,7 @@ import OurValues from "./OurValues";
 import WhoWeAre from "./WhoWeAre";
 import PopularLocation from "./PopularLocation";
 import p1 from "../assets/images/p1.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
   // get list of catégorie
@@ -134,7 +135,7 @@ function Home() {
                 (annonce, i) =>
                   i < 6 && (
                     <div key={annonce.id} className="col-lg-4 col-md-6 mb-3">
-                      <a href="property-single.html">
+                      <Link to={`/details/${annonce.id}`}>
                         <div className="box16">
                           <div className="rentext-listing-category">
                             <span>{annonce.type_annonce}</span>
@@ -147,7 +148,7 @@ function Home() {
                             <span className="post">{annonce.titre}</span>
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   )
               )}

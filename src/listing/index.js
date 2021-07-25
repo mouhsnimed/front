@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import p1 from "../assets/images/p1.jpg";
-import {numberWithCommas,fetchAysnc,postAysnc} from "../request/function.js";
-
+import {
+  numberWithCommas,
+  fetchAysnc,
+  postAysnc,
+} from "../request/function.js";
 
 const Listing = () => {
   // get list of catégorie
@@ -484,7 +487,7 @@ const Listing = () => {
                         key={annonce.id}
                         className="col-lg-4 col-md-6 listing-img mt-lg-0 pt-lg-0 mt-5 pt-md-2 mb-3"
                       >
-                        <a href="#url">
+                        <Link to={`/details/${annonce.id}`}>
                           <div className="box16">
                             <div className="rentext-listing-category">
                               <span> {annonce.type_annonce} </span>
@@ -498,10 +501,12 @@ const Listing = () => {
                               </h3>
                             </div>
                           </div>
-                        </a>
+                        </Link>
                         <div className="listing-details blog-details align-self">
                           <h4 className="user_title agent">
-                            <a href="#url"> {annonce.titre} </a>
+                            <Link to={`/details/${annonce.id}`}>
+                              {annonce.titre}{" "}
+                            </Link>
                           </h4>
                           <p className="user_position">{annonce.adresse}</p>
                           <ul className="mt-3 estate-info">
