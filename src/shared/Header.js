@@ -95,7 +95,7 @@ const Header = () => {
                   className="nav-link"
                   to="/"
                 >
-                  Accueil
+                  ACCUEIL
                 </NavLink>
               </li>
               <li className={`nav-item`}>
@@ -104,7 +104,7 @@ const Header = () => {
                   className="nav-link"
                   to="/listing"
                 >
-                  Annonces
+                  ANNONCES
                 </NavLink>
               </li>
               {/* <li className="nav-item @@listing__active">
@@ -119,7 +119,15 @@ const Header = () => {
                   className="nav-link"
                   to="/about-us"
                 >
-                  Nous ?
+                  NOUS
+                </NavLink>
+              </li>              
+              <li className={`nav-item`}>
+                <NavLink className="nav-link" 
+                         activeClassName="active"
+                         to="/visite"
+                         >
+                  360° VISITES
                 </NavLink>
               </li>
               <li className={`nav-item`}>
@@ -128,7 +136,7 @@ const Header = () => {
                   className="nav-link"
                   to="/contact"
                 >
-                  Contact
+                  CONTACT
                 </NavLink>
               </li>
             </ul>
@@ -149,8 +157,7 @@ const Header = () => {
                     onClick={handleLogOut}
                     className="btn btn-style btn-outline-primary"
                   >
-                    <i className="fa fa-sign-out"></i>
-                    Se déconnecter
+                      <i className="fa fa-sign-out"></i>
                   </span>
                 </div>
               </>

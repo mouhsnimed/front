@@ -14,8 +14,8 @@ const PopularLocation = () => {
       <div className="locations py-5">
         <div className="container py-lg-5 py-md-4">
           <div className="heading text-center mx-auto">
-            <h6 className="title-small">Explore cities</h6>
-            <h3 className="title-big">Popular Locations</h3>
+            <h6 className="title-small">Explorer le Maroc </h6>
+            <h3 className="title-big"> Trouvez l'appartement qu'il vous faut </h3>
           </div>
           <div className="row pt-5">
             <div className="col-lg-3 col-md-4 col-6">

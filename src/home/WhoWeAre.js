@@ -11,47 +11,48 @@ const WhoWeAre = () => {
             </div>
             <div className="col-lg-7 pl-lg-0">
               <div className="w3l-right-info">
-                <h6 className="title-small">Who we are</h6>
                 <h3 className="title-big">
-                  The experts in local and international property
+                  Découvrez la puissance de la technologie MatterPort
                 </h3>
                 <p className="mt-4">
-                  We have over 15 year experience, Over 20,000 people work for
-                  us in more than 70 countries all over the world. Learn more
-                  about our work! Lorem ipsum vive dolor sit amet.
+                  MatterPort est un moteur de rendu 
+                  virtuel, vous permettant de faire 
+                  des visites par immersion <b>3D</b>. 
                 </p>
                 <p className="mt-3">
-                  Viverra feugiat. Pellen tesque libero ut justo, ultrices in
-                  ligula. Semper at tempufddfel lorem ipsum.
+                  Grâce à cette technologie futuriste , Utiliser par 
+                  nos shooters, vous profiterez des avantages d'une 
+                  visites virtuelles, nettement plus bénéfique qu'une 
+                  visite classique.
                 </p>
                 <ul className="w3l-right-book w3l-right-book-grid mt-md-5 mt-4">
                   <li>
-                    <span className="fa fa-check" aria-hidden="true"></span>
-                    Outstanding property
+                    <span className="fa fa-check text-secondary" aria-hidden="true"></span>
+                     Economisez votre énergie 
                   </li>
                   <li>
-                    <span className="fa fa-check" aria-hidden="true"></span>
-                    Social responsibility
+                    <span className="fa fa-check text-secondary" aria-hidden="true"></span>
+                    Gagnez en Temps
                   </li>
                   <li>
-                    <span className="fa fa-check" aria-hidden="true"></span>Get
-                    expert advice
+                    <span className="fa fa-check text-secondary" aria-hidden="true"></span>
+                    En Flexibilité
                   </li>
                   <li>
-                    <span className="fa fa-check" aria-hidden="true"></span>
-                    Group structure
+                    <span className="fa fa-check text-secondary" aria-hidden="true"></span>
+                      Epargnez
                   </li>
                   <li>
-                    <span className="fa fa-check" aria-hidden="true"></span>
-                    Specialist services
+                    <span className="fa fa-check text-secondary" aria-hidden="true"></span>
+                    Faites du Profit
                   </li>
                   <li>
-                    <span className="fa fa-check" aria-hidden="true"></span>
-                    Vision & strategy
+                    <span className="fa fa-check text-secondary" aria-hidden="true"></span>
+                    Rapprocher votre Clientelle
                   </li>
                 </ul>
-                <a href="#services" className="btn btn-style btn-primary mt-4">
-                  Discover our services
+                <a href="#services" className="btn btn-style btn-danger mt-4">
+                  Décrouvrer Matterport
                 </a>
               </div>
             </div>
@@ -66,49 +67,50 @@ const WhoWeAre = () => {
                 <span className="fa fa-home"></span>
                 <h4>
                   <a href="#feature" className="title-head">
-                    Buy a home
+                    Offres d'Achat
                   </a>
                 </h4>
                 <p>
-                  Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor
-                  amet ipsum primis in faucibus orci.
+                  Voulez vous devenir propriétaire, consulter 
+                  nos offres dans tous le <b className="text-danger"> Maroc </b>, visiter,
+                  votre futurs propriété.
                 </p>
                 <a href="#more" className="more">
-                  Read More <span className="fa fa-long-arrow-right"></span>{" "}
+                  voir <span className="fa fa-long-arrow-right"></span>{" "}
                 </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
               <div className="area-box no-box-shadow">
-                <span className="fa fa-home"></span>
+                <span className="fa fa-building-o"></span>
                 <h4>
                   <a href="#feature" className="title-head">
-                    Rent a home{" "}
+                    Vous préférez Louez
                   </a>
                 </h4>
                 <p>
-                  Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor
-                  amet ipsum primis in faucibus orci.
+                  Trouvez un appartement dans les  <b className="text-danger">  millions d'offres </b> 
+                  que nous avons et faites votre choix.
                 </p>
                 <a href="#more" className="more">
-                  Read More <span className="fa fa-long-arrow-right"></span>{" "}
+                  voir <span className="fa fa-long-arrow-right"></span>{" "}
                 </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
               <div className="area-box no-box-shadow">
-                <span className="fa fa-building-o"></span>
+                <span className="fa fa-users"></span>
                 <h4>
                   <a href="#feature" className="title-head">
-                    See neighbourhoods
+                    Devenir Partenaire
                   </a>
                 </h4>
                 <p>
-                  Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor
-                  amet ipsum primis in faucibus orci.
+                 êtes vous prêt pour l'aventure, découvrer, comment 
+                 nous réjoindre, <b className="text-danger">  Shooters </b> ou <b className="text-danger">  Annonceur </b>.                 
                 </p>
                 <a href="#more" className="more">
-                  Read More <span className="fa fa-long-arrow-right"></span>{" "}
+                  Voir <span className="fa fa-long-arrow-right"></span>{" "}
                 </a>
               </div>
             </div>

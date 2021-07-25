@@ -1,36 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./index.css";
-
 import p1 from "../assets/images/p1.jpg";
+import {numberWithCommas,fetchAysnc,postAysnc} from "../request/function.js";
 
-const fetchAysnc = async (api) => {
-  const res = await fetch(api, {
-    method: "GET",
-  });
-
-  const data = await res.json();
-  return data;
-};
-
-const postAysnc = async (api, dataEntry) => {
-  const res = await fetch(api, {
-    method: "POST",
-    headers: { "Content-type": "application/json" },
-    body: JSON.stringify(dataEntry),
-  });
-
-  const data = await res.json();
-  return data;
-};
-
-function numberWithCommas(x = null) {
-  if (x != null) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  } else {
-    return "";
-  }
-}
 
 const Listing = () => {
   // get list of catégorie
