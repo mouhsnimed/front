@@ -23,8 +23,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p1} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Newyork</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Casablanca</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -34,8 +34,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p2} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">California</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Agadir</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -45,8 +45,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p3} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Las vegas</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Rabat</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -56,8 +56,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p4} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Malaysia</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Sale</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -67,8 +67,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p5} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Paris</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Kenitra</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -78,8 +78,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p6} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">New Jersy</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Marrakech</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -89,8 +89,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p7} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">France</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Safi</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>
@@ -100,8 +100,8 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p8} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Newyork</h3>
-                    <span className="post">4 listings</span>
+                    <h3 className="title mb-1">Oujda</h3>
+                    {/* <span className="post">4 listings</span> */}
                   </div>
                 </div>
               </a>

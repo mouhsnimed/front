@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WhoWeAre = () => {
   return (
@@ -51,9 +52,9 @@ const WhoWeAre = () => {
                     Rapprocher votre Clientelle
                   </li>
                 </ul>
-                <a href="#services" className="btn btn-style btn-danger mt-4">
+                <Link to="/about-us" className="btn btn-style btn-danger mt-4">
                   Décrouvrer Matterport
-                </a>
+                </Link>
               </div>
             </div>
           </div>

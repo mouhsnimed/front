@@ -19,9 +19,9 @@ const TipsandAdvices = () => {
               <div className="grids5-info">
                 <span className="posted-date">
                   <a href="#blog-single">
-                    <span className="small">2020</span>
-                    <span className="big">16</span>
-                    <span className="small">October</span>
+                    <span className="small">Prestation</span>
+                    <span className="big text-primary">200</span>
+                    <span className="small">MAD</span>
                   </a>
                 </span>
                 <a href="#blog-single" className="d-block zoom">
@@ -37,8 +37,7 @@ const TipsandAdvices = () => {
                     </a>
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas
-                    earum!
+                    
                   </p>
                 </div>
               </div>
@@ -47,9 +46,9 @@ const TipsandAdvices = () => {
               <div className="grids5-info">
                 <span className="posted-date">
                   <a href="#blog-single">
-                    <span className="small">2020</span>
-                    <span className="big">19</span>
-                    <span className="small">October</span>
+                    <span className="small">Prestation</span>
+                    <span className="big text-primary">150</span>
+                    <span className="small">MAD</span>
                   </a>
                 </span>
                 <a href="#blog-single" className="d-block zoom">
@@ -65,8 +64,6 @@ const TipsandAdvices = () => {
                     </a>
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas
-                    earum!
                   </p>
                 </div>
               </div>
@@ -75,9 +72,9 @@ const TipsandAdvices = () => {
               <div className="grids5-info">
                 <span className="posted-date">
                   <a href="#blog-single">
-                    <span className="small">2020</span>
-                    <span className="big">20</span>
-                    <span className="small">October</span>
+                    <span className="small">Prestation</span>
+                    <span className="big text-primary">120</span>
+                    <span className="small">MAD</span>
                   </a>
                 </span>
                 <a href="#blog-single" className="d-block zoom">
@@ -93,8 +90,7 @@ const TipsandAdvices = () => {
                     </a>
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas
-                    earum!
+                    
                   </p>
                 </div>
               </div>

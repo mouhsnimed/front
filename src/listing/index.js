@@ -489,7 +489,8 @@ const Listing = () => {
                             <div className="rentext-listing-category">
                               <span> {annonce.type_annonce} </span>
                             </div>
-                            <img className="img-fluid" src={p1} alt="" />
+                            <img className="img-fluid" 
+                                 src={ annonce.chemin != null ? `http://localhost:8000/${annonce.chemin}` : p1} alt="" />
                             <div className="box-content">
                               <h3 className="title">
                                 {" "}

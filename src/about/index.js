@@ -1,5 +1,6 @@
 import React from "react";
 import about from "../assets/images/about.jpg";
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -13,21 +14,14 @@ function About() {
         <div className="container">
           <ul className="breadcrumbs-custom-path">
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.html">Accueil</a>
             </li>
             <li className="active">
               <span
                 className="fa fa-angle-right mx-2"
                 aria-hidden="true"
               ></span>{" "}
-              Pages
-            </li>
-            <li className="active">
-              <span
-                className="fa fa-angle-right mx-2"
-                aria-hidden="true"
-              ></span>{" "}
-              About Us
+              Nous
             </li>
           </ul>
         </div>
@@ -42,17 +36,16 @@ function About() {
               </div>
               <div className="col-lg-7 pl-lg-0">
                 <div className="w3l-right-info">
-                  <h6 className="title-small">About us</h6>
-                  <h3 className="title-big">Our long-standing experience</h3>
+                  <h3 className="title-big">Nous vous proposons une expérience inovante </h3>
                   <h5 className="mt-4">
-                    We have over 15 year experience, Over 20,000 people work for
-                    us in more than 70 countries all over the world. Lorem ipsum
-                    viverra feugiat dolor sit amet.
+                    Mettre à votre disposition la maison de vos.
+                    profiter des avancés technologique en termes d'inovation 
+                    mis à votre disposition pour vous sastifaire.
                   </h5>
                   <p className="mt-4">
-                    Viverra feugiat. Pellen tesque libero ut justo, ultrices in
-                    ligula. Semper at tempufddfel lorem ipsum. Lorem ipsum
-                    viverra feugiat dolor sit amet primis in faucibus orci.
+                    Qu'attendez décrouvez des offres , visiter , explorer
+                    et surtout trouvez ce que vous chercher, c'est par là.
+
                   </p>
                   <a
                     href="#small-dialog1"
@@ -61,31 +54,23 @@ function About() {
                     <span className="video-play-icon">
                       <span className="fa fa-play"></span>
                     </span>
-                    See Our Story
+                    <Link  to="/visite" > 360° visite </Link>
                   </a>
-
-                  <div id="small-dialog1" className="zoom-anim-dialog mfp-hide">
-                    <iframe
-                      src="https://www.youtube.com/embed/jqP3m3ElcxA"
-                      frameborder="0"
-                      allowfullscreen=""
-                    ></iframe>
-                  </div>
                 </div>
               </div>
             </div>
+
             <div className="grids-area-hny main-cont-wthree-fea row mt-5 pt-lg-5 pt-5">
               <div className="col-lg-4 col-md-6 grids-feature">
                 <div className="area-box">
-                  <span className="fa fa-home"></span>
+                  <span className="fa fa-users"></span>
                   <h4>
                     <a href="#feature" className="title-head">
-                      Guidance you need
+                       Devenez Partenaires
                     </a>
                   </h4>
                   <p>
-                    Vivamus a ligula quam tesque et libero ut justo, ultrices
-                    in. Ut eu leo non. Duis sed et dolor amet.
+                    Inscrivez vous dès maintenant pour faire partir de la team
                   </p>
                 </div>
               </div>
@@ -94,12 +79,11 @@ function About() {
                   <span className="fa fa-search-plus"></span>
                   <h4>
                     <a href="#feature" className="title-head">
-                      Search that feels familiar
+                      360° visite
                     </a>
                   </h4>
                   <p>
-                    Vivamus a ligula quam tesque et libero ut justo, ultrices
-                    in. Ut eu leo non. Duis sed dolor et amet.
+                    Des espériences réaliste comme si vous y étiez 
                   </p>
                 </div>
               </div>
@@ -108,52 +92,59 @@ function About() {
                   <span className="fa fa-dollar"></span>
                   <h4>
                     <a href="#feature" className="title-head">
-                      Premium values
+                      Gratuit
                     </a>
                   </h4>
                   <p>
-                    Vivamus a ligula quam tesque et libero ut justo, ultrices
-                    in. Ut eu leo non. Duis sed dolor et amet.
+                    Inscrivez vous gratuitement
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <section className="w3l-aboutblock2" id="why">
           <div className="midd-w3 py-5">
             <div className="container py-lg-5 py-md-4 py-2">
               <div className="row">
                 <div className="col-lg-6 left-wthree-img">
-                  <img src={about} alt="" className="img-fluid radius-image" />
+                  <iframe src="https://www.youtube.com/embed/A8CdkN-g6oY?autoplay=1&mute=1&loop=1" 
+                  alt="" className="img-fluid radius-image"
+                  style={{width:"100%",height:"100%"}} >
+                  </iframe>
                 </div>
                 <div className="col-lg-6 mt-lg-0 mt-5 align-self">
-                  <h6 className="title-small">Why us</h6>
-                  <h3 className="title-big">
-                    To help members become more profitable and successful
+                  <h6 className="title-small"> Découvrez </h6>
+                  <h3 className="title-big text-danger">
+                    MATTERPORT CORTEX POWER
                   </h3>
                   <p className="mt-4">
-                    We have over 15 year experience in business consulting
-                    arena. Learn more about our work! Lorem ipsum viverra
-                    feugiat. Pellen tesque libero ut justo, ultrices in ligula.
-                    Semper at tempufddfel
+                  Matterport est la norme pour la capture d’espaces 3D. 
+                  C’est une plateforme tout-en-un qui transforme des espaces réels en 
+                  modèles de jumeaux digitaux immersifs. Bien plus que des scans panoramiques, 
+                  Matterport permet aux utilisateurs de capturer et de connecter des pièces pour 
+                  créer des modèles 3D d’espaces réellement interactifs.                  
+                  </p>
+                  <p className="mt-4">
+                    équipez de CORTEX pour vous faciliter encore la vie
                   </p>
                   <ul className="w3l-right-book mt-lg-5 mt-4">
                     <li>
                       <span className="fa fa-check" aria-hidden="true"></span>
-                      Help sellers get the most for their properties
+                      Capturer 
                     </li>
                     <li>
                       <span className="fa fa-check" aria-hidden="true"></span>
-                      Help sellers price their properties fairly
+                      Présenter innover
                     </li>
                     <li>
                       <span className="fa fa-check" aria-hidden="true"></span>
-                      Help buyers find the property that fits their needs
+                        Plonger dans une réaliter virtuel
                     </li>
                     <li>
                       <span className="fa fa-check" aria-hidden="true"></span>
-                      Avoid over paying by strategically negotiating purchase
+                        Découvrez vos batiment comme si vous y étiez
                     </li>
                   </ul>
                 </div>

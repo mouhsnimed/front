@@ -1,5 +1,6 @@
 import React from "react";
 
+import client0 from "../assets/images/matterport.png";
 import client1 from "../assets/images/client1.png";
 import client2 from "../assets/images/client2.png";
 import client3 from "../assets/images/client3.png";
@@ -12,6 +13,13 @@ const Companies = () => {
     <section className="w3l-companies-hny-6 py-5">
       <div className="container py-md-3">
         <div className="row">
+          <div className="col-lg-2 col-md-4 col-6 column mt-3">
+            <div className="company-gd">
+              <a href="https://matterport.com/" target="_blank">
+                <img className="img-responsive" src={client0} alt="client" />{" "}
+              </a>
+            </div>
+          </div>
           <div className="col-lg-2 col-md-4 col-6 column">
             <div className="company-gd">
               <a href="#client">
@@ -37,13 +45,6 @@ const Companies = () => {
             <div className="company-gd">
               <a href="#client">
                 <img className="img-responsive" src={client4} alt="client" />{" "}
-              </a>
-            </div>
-          </div>
-          <div className="col-lg-2 col-md-4 col-6 column mt-lg-0 mt-4">
-            <div className="company-gd">
-              <a href="#client">
-                <img className="img-responsive" src={client5} alt="client" />{" "}
               </a>
             </div>
           </div>
