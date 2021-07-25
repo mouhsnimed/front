@@ -59,7 +59,7 @@ function Login({ history }) {
         <div className="container">
           <ul className="breadcrumbs-custom-path">
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.html">Accueil</a>
             </li>
             <li className="active">
               <span
@@ -114,7 +114,7 @@ function Login({ history }) {
                         type="submit"
                         className="btn btn-primary btn-style btn-block mt-4"
                       >
-                        Submit
+                        connexion
                       </button>
                     </form>
                   </div>

@@ -14870,7 +14870,7 @@ a.title-small {
 }
 
 .w3l-left-img {
-  background: url(./images/who.jpg) no-repeat center center;
+  background: url(./images/photo-virtual1.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);
@@ -14879,7 +14879,7 @@ a.title-small {
 }
 
 .w3l-left-img1 {
-  background: url(./images/who1.jpg) no-repeat center center;
+  background: url(./images/virtual-glass.png) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);
@@ -14888,7 +14888,7 @@ a.title-small {
 }
 
 .w3l-left-img2 {
-  background: url(./images/about1.jpg) no-repeat center center;
+  background: url(./images/virtual-glass.png) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);

@@ -8,18 +8,17 @@ const OurValues = () => {
           <div className="col-lg-4 col-md-6 grids-feature">
             <div className="area-box no-box-shadow text-left">
               <span className="fa fa-search-plus"></span>
-              <h5>All in one place</h5>
+              <h5>Rechercher et Visiter</h5>
               <h4>
                 <a href="#feature" className="title-head">
-                  Your One-Stop Shop for Finding Your Dream Home
+                  Trouvez l'appartement de vos rêve sans plus tarder
                 </a>
               </h4>
               <p>
-                Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor in
-                orci.
+                Faites une recherches maintenant visiter, contacter et soyez loger.
               </p>
               <a href="#more" className="more">
-                Search for home<span className="fa fa-long-arrow-right"></span>{" "}
+                je veux chercher<span className="fa fa-long-arrow-right"></span>{" "}
               </a>
             </div>
           </div>
@@ -29,30 +28,30 @@ const OurValues = () => {
               <h5>Connect to an agent</h5>
               <h4>
                 <a href="#feature" className="title-head">
-                  Schedule a Free, No-Obligation Appointment
+                  Créer vous un compte.
                 </a>
               </h4>
               <p>
-                Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor in
-                orci.
+                Vous désirez publier des annonces,
+                réjoignez nous maintenant , en créant un compte.
               </p>
               <a href="#more" className="more">
-                Find an agent <span className="fa fa-long-arrow-right"></span>{" "}
+                créer mon compte <span className="fa fa-long-arrow-right"></span>{" "}
               </a>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
             <div className="area-box no-box-shadow text-left">
               <span className="fa fa-home"></span>
-              <h5>Get a home valuation</h5>
+              <h5> Trouvez le Bon Shooters</h5>
               <h4>
                 <a href="#feature" className="title-head">
-                  Understand the Value of Your Property{" "}
+                  Annonceur, vous voulez faire une Converture 360°
                 </a>
               </h4>
               <p>
-                Vivamus a ligula quam. Ut blandit eu leo non. Duis sed dolor in
-                orci.
+                Consulter la liste de nos Shooters et trouver le <b className="text-danger"> profile 
+                idéal</b>, au <b className="text-danger"> prix idéal </b>.
               </p>
               <a href="#more" className="more">
                 Submit info <span className="fa fa-long-arrow-right"></span>{" "}
