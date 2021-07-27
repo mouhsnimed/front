@@ -258,14 +258,14 @@ const Shooter = () => {
                       </ul>              
                     </div>
                     <hr/>
-                    <div className="listing-category">
+                    {/* <div className="listing-category">
                       <span>Plan de Travail</span>
                     </div>   
                     <hr/>
                     <div className="listing-category">
                       <span>Outils de Modélisation</span>
                     </div>   
-                    <hr/>
+                    <hr/> */}
                 </div> 
               </div>
             </div>
@@ -298,7 +298,7 @@ const Shooter = () => {
                     </div>
 
                     <hr/>
-                    <article className="post">
+                    {/* <article className="post">
                       <figure className="post-thumb">
                         <img src={l1} className="radius-image" alt="" />
                       </figure>
@@ -318,7 +318,7 @@ const Shooter = () => {
                         <a href="#blog-single">Build your next landing page.</a>
                         <div className="post-info">Sep 09, 2020 - 2 comments</div>
                       </div>
-                    </article>
+                    </article> */}
                   </div>
               </aside>
             </div>            

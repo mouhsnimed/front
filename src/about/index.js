@@ -96,7 +96,7 @@ function About() {
                     </a>
                   </h4>
                   <p>
-                    Inscrivez vous gratuitement
+                    Inscrivez vous gratuitement et commencer l'aventure
                   </p>
                 </div>
               </div>
@@ -147,6 +147,13 @@ function About() {
                         Découvrez vos batiment comme si vous y étiez
                     </li>
                   </ul>
+                  <div style={{width:"100%",textAlign:"center"}} className="mt-4">
+                    <a href="https://matterport.com/" target="_blank"
+                      className="btn btn-danger"
+                      style={{padding:"15px"}}>
+                      DECOUVRIR MATTERPORT <i className="fa fa-cube"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
