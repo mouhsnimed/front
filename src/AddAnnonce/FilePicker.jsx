@@ -2,12 +2,13 @@ import { useFilePicker } from "use-file-picker";
 import React, { useState } from "react";
 import API from "../request/api";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import CustomLoader from "../shared/Loader";
 
 export default function FilePicker() {
   const [loader, setLoader] = useState(false);
   const params = useParams();
+  const history = useHistory();
   const [
     openFileSelector,
     { filesContent, plainFiles, loading, errors, clear },
@@ -27,6 +28,7 @@ export default function FilePicker() {
 
   const uploadHandler = () => {
     setLoader(true);
+
     let formData = new FormData();
 
     formData.append("annonce_id", params.id);
@@ -53,7 +55,7 @@ export default function FilePicker() {
         });
         setLoader(false);
         clear();
-        // history.push(`/upload-files/${data.id}`);
+        history.push(`/annonce-success`);
       })
       .catch(() => {
         setLoader(false);
