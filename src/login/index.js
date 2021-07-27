@@ -38,7 +38,7 @@ function Login({ history }) {
 
         // redirect to home page
         history.push("/");
-
+        toast.success("Bienvenu a nouveau!");
         // disable loader
         setLoader(false);
       })

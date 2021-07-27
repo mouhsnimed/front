@@ -9,7 +9,8 @@ import p1 from "../assets/images/p1.jpg";
 const MyAnnonces = () => {
   const [list, setList] = useState([]);
   const [loader, setLoader] = useState(false);
-  useLayoutEffect(() => {
+
+  const getAnnonces = () => {
     API({
       method: "get",
       url: "/myAnnonces",
@@ -24,9 +25,30 @@ const MyAnnonces = () => {
           duration: 5000,
         });
       });
+  };
+  useLayoutEffect(() => {
+    getAnnonces();
   }, []);
 
-  console.log(list);
+  const deleteAnnonce = (id) => {
+    API({
+      method: "delete",
+      url: `/Annonce/${id}`,
+    })
+      .then(() => {
+        setLoader(false);
+        toast.success("Votre annonce a été supprimée avec succès", {
+          duration: 5000,
+        });
+        getAnnonces();
+      })
+      .catch(() => {
+        setLoader(false);
+        toast.error("Une erreur s'est produite. Veuillez réessayer", {
+          duration: 5000,
+        });
+      });
+  };
   return (
     <div>
       {loader && <CustomLoader />}
@@ -75,7 +97,13 @@ const MyAnnonces = () => {
                           key={annonce.id}
                           className="col-lg-4 col-md-6 listing-img mt-lg-0 pt-lg-0 mt-5 pt-md-2 mb-3"
                         >
-                          <Link to="/details">
+                          <span
+                            class="remove-annonce"
+                            onClick={() => deleteAnnonce(annonce.id)}
+                          >
+                            <span className="fa fa-trash"></span>
+                          </span>
+                          <Link to={`/details/${annonce.id}`}>
                             <div className="box16">
                               <div className="rentext-listing-category">
                                 <span>{annonce.type_annonce}</span>

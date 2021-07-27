@@ -26,7 +26,7 @@ function Contact() {
                 className="fa fa-angle-right mx-2"
                 aria-hidden="true"
               ></span>{" "}
-              Contact Us
+              Contactez nous
             </li>
           </ul>
         </div>
