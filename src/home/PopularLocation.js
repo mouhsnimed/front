@@ -15,7 +15,10 @@ const PopularLocation = () => {
         <div className="container py-lg-5 py-md-4">
           <div className="heading text-center mx-auto">
             <h6 className="title-small">Explorer le Maroc </h6>
-            <h3 className="title-big"> Trouvez l'appartement qu'il vous faut </h3>
+            <h3 className="title-big">
+              {" "}
+              Trouvez l'appartement qu'il vous faut{" "}
+            </h3>
           </div>
           <div className="row pt-5">
             <div className="col-lg-3 col-md-4 col-6">
@@ -23,7 +26,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p1} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Newyork</h3>
+                    <h3 className="title mb-1">Csablanca</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -34,7 +37,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p2} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">California</h3>
+                    <h3 className="title mb-1">Rabat</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -45,7 +48,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p3} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Las vegas</h3>
+                    <h3 className="title mb-1">Agadir</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -56,7 +59,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p4} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Malaysia</h3>
+                    <h3 className="title mb-1">Marrakech</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -67,7 +70,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p5} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Paris</h3>
+                    <h3 className="title mb-1">El jadida</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -78,7 +81,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p6} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">New Jersy</h3>
+                    <h3 className="title mb-1">Tanger</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -89,7 +92,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p7} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">France</h3>
+                    <h3 className="title mb-1">Dakhla</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>
@@ -100,7 +103,7 @@ const PopularLocation = () => {
                 <div className="box16">
                   <img className="img-fluid" src={p8} alt="" />
                   <div className="box-content">
-                    <h3 className="title mb-1">Newyork</h3>
+                    <h3 className="title mb-1">Titouane</h3>
                     <span className="post">4 listings</span>
                   </div>
                 </div>

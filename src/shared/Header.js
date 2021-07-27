@@ -121,12 +121,13 @@ const Header = () => {
                 >
                   NOUS
                 </NavLink>
-              </li>              
+              </li>
               <li className={`nav-item`}>
-                <NavLink className="nav-link" 
-                         activeClassName="active"
-                         to="/visite"
-                         >
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/visite"
+                >
                   360° VISITES
                 </NavLink>
               </li>
@@ -157,7 +158,7 @@ const Header = () => {
                     onClick={handleLogOut}
                     className="btn btn-style btn-outline-primary"
                   >
-                      <i className="fa fa-sign-out"></i>
+                    <i className="fa fa-sign-out"></i>
                   </span>
                 </div>
               </>

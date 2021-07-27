@@ -161,7 +161,7 @@ function Home() {
         <PopularLocation />
         <OurValues />
         <TipsandAdvices />
-        <Companies />
+        {/* <Companies /> */}
       </section>
     </div>
   );
