@@ -40,11 +40,11 @@ function Contact() {
                   <div className="contact-form">
                     <h5 className="mb-2">Get in touch</h5>
                     <p className="mb-4">
-                      Your email address will not be published. Required fields
-                      are marked *
+                      Votre adresse email ne sera pas publiée. Les champs requis
+                      sont indiqués *
                     </p>
                     <form
-                      action="https://sendmail.w3layouts.com/submitForm"
+                      action="http://localhost:3000/contact"
                       method="post"
                       className=""
                     >
@@ -54,7 +54,7 @@ function Contact() {
                             type="text"
                             name="w3lName"
                             id="w3lName"
-                            placeholder="Your Name"
+                            placeholder="Votre nom"
                             required=""
                           />
                         </div>
@@ -75,11 +75,11 @@ function Contact() {
                           placeholder="Message"
                         ></textarea>
                       </div>
-                      <input type="checkbox" />{" "}
+                      {/* <input type="checkbox" />{" "}
                       <label>
                         Save my name, email, and website in this browser for the
                         next time I comment
-                      </label>
+                      </label> */}
                       <button
                         type="submit"
                         className="btn btn-primary btn-style mt-3"
@@ -91,30 +91,25 @@ function Contact() {
                 </div>
                 <div className="col-lg-4 cont-details">
                   <address>
-                    <h5 className="">Our Office Address</h5>
+                    <h5 className="">Nos Address</h5>
                     <p>
-                      <span className="fa fa-map-marker"></span>Estate sale
-                      office, 32, My Street, Kingston, New York 12401.{" "}
+                      <span className="fa fa-map-marker"></span>
+                      Casablanca, Maroc
                     </p>
 
-                    <h5 className="mt-4 pt-lg-3">Phone informatiom</h5>
+                    <h5 className="mt-4 pt-lg-3">Numéro de téléphone</h5>
                     <p>
                       <span className="fa fa-mobile"></span>{" "}
                       <strong>Phone :</strong>
-                      <a href="tel:+1(12) 366 411 4999"> (+1) 366 411 499</a>
+                      <a href="tel:+212606196434"> (+212) 606196434</a>
                     </p>
-
-                    <p>
-                      <span className="fa fa-phone"></span>{" "}
-                      <strong>Tel :</strong>
-                      <a href="tel:+1(12) 366 411 4999"> (+1) 366 411 499</a>
-                    </p>
-
                     <p>
                       {" "}
                       <span className="fa fa-envelope"></span>{" "}
                       <strong>Email :</strong>
-                      <a href="mailto:mail@example.com"> mail@example.com</a>
+                      <a href="mailto:m.mouhsni@gmail.com">
+                        m.mouhsni@gmail.com
+                      </a>
                     </p>
                   </address>
                 </div>

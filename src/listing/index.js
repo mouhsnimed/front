@@ -28,7 +28,6 @@ const Listing = () => {
   const getAnnonces = async (urlApi) => {
     const DataFromServer = await fetchAysnc(urlApi);
 
-    console.log(DataFromServer);
     if (DataFromServer.data === "error") {
       setAnnonces([]);
     } else {
@@ -128,7 +127,7 @@ const Listing = () => {
 
   useEffect(() => {
     getCategories();
-    getAnnonces("http://localhost:8000/api/Annonce");
+    getAnnonces("http://localhost:8000/api/AnnonceList");
   }, []);
 
   // render page
@@ -480,67 +479,59 @@ const Listing = () => {
                   <h5> Aucun élément trouvé </h5>{" "}
                 </div>
               ) : (
-                annonces.map(
-                  (annonce, i) =>
-                    i < 9 && (
-                      <div
-                        key={annonce.id}
-                        className="col-lg-4 col-md-6 listing-img mt-lg-0 pt-lg-0 mt-5 pt-md-2 mb-3"
-                      >
-                        <Link to={`/details/${annonce.id}`}>
-                          <div className="box16">
-                            <div className="rentext-listing-category">
-                              <span> {annonce.type_annonce} </span>
-                            </div>
-                            <img className="img-fluid" 
-                                 src={ annonce.chemin != null ? `http://localhost:8000/${annonce.chemin}` : p1} alt="" />
-                            <div className="box-content">
-                              <h3 className="title">
-                                {" "}
-                                {numberWithCommas(annonce.prix)} MAD{" "}
-                              </h3>
-                            </div>
-                          </div>
-                        </Link>
-                        <div className="listing-details blog-details align-self">
-                          <h4 className="user_title agent">
-                            <Link to={`/details/${annonce.id}`}>
-                              {annonce.titre}{" "}
-                            </Link>
-                          </h4>
-                          <p className="user_position">{annonce.adresse}</p>
-                          <ul className="mt-3 estate-info">
-                            <li>
-                              <span className="fa fa-bed"></span>{" "}
-                              {annonce.nombre_chambre} ch
-                            </li>
-                            <li>
-                              <span className="fa fa-shower"></span>{" "}
-                              {annonce.nombre_bain} bain
-                            </li>
-                            <li>
-                              <span className="fa fa-share-square-o"></span>{" "}
-                              {annonce.superficie} m²
-                            </li>
-                          </ul>
-                          {/* partie annonceur */}
-                          {/* <div className="author align-items-center mt-4">
-                        <a href="#img" className="comment-img">
-                          <img src={team3} alt="" className="img-fluid" />
-                        </a>
-                        <ul className="blog-meta">
-                          <li>
-                            <a href="#url">Laura Antiochus </a>
-                          </li>
-                          <li className="meta-item blog-lesson">
-                            <span className="meta-value"> Selling agent</span>
-                          </li>
-                        </ul>
-                      </div> */}
+                annonces.map((annonce, i) => (
+                  <div
+                    key={annonce.id}
+                    className="col-lg-4 col-md-6 listing-img mt-lg-0 pt-lg-0 mt-5 pt-md-2 mb-3"
+                  >
+                    <Link to={`/details/${annonce.id}`}>
+                      <div className="box16">
+                        <div className="rentext-listing-category">
+                          <span> {annonce.type_annonce} </span>
+                        </div>
+                        <img
+                          className="img-fluid"
+                          src={
+                            annonce.chemin != null
+                              ? `http://localhost:8000/${annonce.chemin}`
+                              : p1
+                          }
+                          alt=""
+                        />
+                        <div className="box-content">
+                          <h3 className="title">
+                            {" "}
+                            {numberWithCommas(annonce.prix)} MAD{" "}
+                          </h3>
                         </div>
                       </div>
-                    )
-                )
+                    </Link>
+                    <div className="listing-details blog-details align-self">
+                      <h4 className="user_title agent">
+                        <Link to={`/details/${annonce.id}`}>
+                          {annonce.titre}{" "}
+                        </Link>
+                      </h4>
+                      <p className="user_position">
+                        {annonce.adresse}, {annonce.ville}
+                      </p>
+                      <ul className="mt-3 estate-info">
+                        <li>
+                          <span className="fa fa-bed"></span>{" "}
+                          {annonce.nombre_chambre} ch
+                        </li>
+                        <li>
+                          <span className="fa fa-shower"></span>{" "}
+                          {annonce.nombre_bain} bain
+                        </li>
+                        <li>
+                          <span className="fa fa-share-square-o"></span>{" "}
+                          {annonce.superficie} m²
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                ))
               )}
             </div>
 

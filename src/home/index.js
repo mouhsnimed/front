@@ -5,8 +5,8 @@ import TipsandAdvices from "../shared/TipsandAdvices";
 import OurValues from "./OurValues";
 import WhoWeAre from "./WhoWeAre";
 import PopularLocation from "./PopularLocation";
-import p1 from "../assets/images/p1.jpg";
 import { Link } from "react-router-dom";
+import { BACKEND_URL } from "../request/api";
 
 function Home() {
   // get list of catégorie
@@ -28,8 +28,8 @@ function Home() {
       const tasksFromServer = await fetchAysnc(
         "http://localhost:8000/api/Annonce"
       );
-      setAnnonces(Array.from(tasksFromServer.data));
-      console.log(annonces);
+
+      setAnnonces(tasksFromServer);
     };
     getAnnonces();
   }, []);
@@ -131,27 +131,32 @@ function Home() {
             </div>
 
             <div className="row pt-md-5 pt-4">
-              {annonces.map(
-                (annonce, i) =>
-                  i < 6 && (
-                    <div key={annonce.id} className="col-lg-4 col-md-6 mb-3">
-                      <Link to={`/details/${annonce.id}`}>
-                        <div className="box16">
-                          <div className="rentext-listing-category">
-                            <span>{annonce.type_annonce}</span>
-                          </div>
-                          <img className="img-fluid" src={p1} alt="" />
-                          <div className="box-content">
-                            <h3 className="title">
-                              {numberWithCommas(annonce.prix)} MAD
-                            </h3>
-                            <span className="post">{annonce.titre}</span>
-                          </div>
-                        </div>
-                      </Link>
+              {annonces.map((annonce, i) => (
+                <div key={annonce.id} className="col-lg-4 col-md-6 mb-3">
+                  <Link
+                    style={{ height: "100%", display: "block" }}
+                    to={`/details/${annonce.id}`}
+                  >
+                    <div className="box16" style={{ height: "100%" }}>
+                      <div className="rentext-listing-category">
+                        <span>{annonce.type_annonce}</span>
+                      </div>
+                      <img
+                        style={{ height: "100%" }}
+                        className="img-fluid"
+                        src={`${BACKEND_URL}/${annonce.chemin}`}
+                        alt=""
+                      />
+                      <div className="box-content">
+                        <h3 className="title">
+                          {numberWithCommas(annonce.prix)} MAD
+                        </h3>
+                        <span className="post">{annonce.titre}</span>
+                      </div>
                     </div>
-                  )
-              )}
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>

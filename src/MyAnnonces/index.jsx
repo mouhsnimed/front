@@ -124,7 +124,9 @@ const MyAnnonces = () => {
                             <h4 className="user_title agent">
                               <Link to="/details"> {annonce.titre} </Link>
                             </h4>
-                            <p className="user_position">{annonce.adresse}</p>
+                            <p className="user_position">
+                              {annonce.adresse}, {annonce.ville}
+                            </p>
                             <ul className="mt-3 estate-info">
                               <li>
                                 <span className="fa fa-bed"></span>{" "}
